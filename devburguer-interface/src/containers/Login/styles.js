@@ -45,6 +45,11 @@ p{
     font-weight: 800;
 }
 
+a {
+    color: #fff;
+    text-decoration: underline;
+    padding: 0.3rem;
+}
 
 
 `
