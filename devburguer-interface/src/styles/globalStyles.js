@@ -9,7 +9,7 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
 
 }
-button{
+button, a{
     cursor: pointer;    
 }
 `
