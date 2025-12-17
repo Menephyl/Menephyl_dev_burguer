@@ -9,9 +9,14 @@ import logo from "../../assets/Logo 1.svg"
 import { Button } from "../../components/Button"
 export default function Login() {
     const schema = yup.object({
-        email: yup.string().email().required(),
-        password: yup.string().min(6).required(),
-    }).required()
+        email: yup.string()
+            .email('Digite um email válido')
+            .required('Campo obrigatório'),
+        password: yup
+            .string()
+            .min(6, "A senha deve ter pelo menos 6 caracteres").required("Insire uma senha valida"),
+    })
+        .required()
 
 
     const { register,
@@ -41,12 +46,14 @@ export default function Login() {
                     <InputContainer>
                         <label>Email</label>
                         <input type="email" {...register("email")} />
+                        <p>{errors?.email?.message}</p>
                     </InputContainer>
                     <InputContainer>
                         <label>Senha</label>
                         <input type="password" {...register("password")} />
+                        <p>{errors?.password?.message}</p>
                     </InputContainer>
-                    {/* <Link>Esqueci minha senha</Link> */}
+
                     <Button type="submit">Entrar</Button>
                 </Form>
                 <p>Não possui conta? <a href="#">Clique aqui!</a></p>
