@@ -37,6 +37,16 @@ height: 100%;
    max-width: 50%;
     background: url(${Background});
     background-color: #1e1e1ee4;
+
+
+p{
+    color: #fff;
+    font-size: 1.125rem;
+    font-weight: 800;
+}
+
+
+
 `
 
 
@@ -76,6 +86,8 @@ input{
 }
 label{
     font-size: 1.125rem;
+    font-weight: 600;
+    color: #fff;
 }
 `
 
