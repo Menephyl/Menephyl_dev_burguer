@@ -94,6 +94,13 @@ label{
     font-weight: 600;
     color: #fff;
 }
+p{
+    color:#cf3057;
+    font-size: 0.875rem;
+    line-height: 80%;
+   height: 0.625rem  ;
+font-weight: 600;
+}
 `
 
 

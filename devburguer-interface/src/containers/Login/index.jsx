@@ -2,7 +2,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup'
 
-
+import { api } from "../../services/api"
 import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, } from "./styles"
 
 import logo from "../../assets/Logo 1.svg"
@@ -17,8 +17,6 @@ export default function Login() {
             .min(6, "A senha deve ter pelo menos 6 caracteres").required("Insire uma senha valida"),
     })
         .required()
-
-
     const { register,
         handleSubmit,
         formState: { errors },
@@ -26,13 +24,15 @@ export default function Login() {
         resolver: yupResolver(schema),
     })
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const onSubmit = async (data) => {
+        const respone = await api.post('/login', {
+            email: data.email,
+            password: data.password,
+        })
+        console.log(respone)
     }
     return (
         <Container>
-
-
             <LeftContainer>
                 <img src={logo} alt='logo-devburguer' />
             </LeftContainer>
