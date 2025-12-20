@@ -22,7 +22,7 @@ export default function Login() {
         .required()
     const { register,
         handleSubmit,
-        formState: { errors },
+        formState: { errors }
     } = useForm({
         resolver: yupResolver(schema),
     })
@@ -72,7 +72,7 @@ export default function Login() {
 
                     <Button type="submit">Entrar</Button>
                 </Form>
-                <p>Não possui conta? <a href="#">Clique aqui!</a></p>
+                <p>Não possui conta? <a href="/cadastro">Clique aqui!</a></p>
             </RightContainer>
         </Container>
     )
