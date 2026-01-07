@@ -2,7 +2,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup'
 import { api } from "../../services/api"
-import { Container, LeftContainer, RightContainer, Title, Form, InputContainer, } from "./styles"
+import { useNavigate } from 'react-router-dom';
+import {
+    Container,
+    LeftContainer,
+    RightContainer,
+    Title,
+    Form,
+    InputContainer,
+    Link
+} from "./styles"
 import { toast } from 'react-toastify';
 
 import logo from "../../assets/Logo 1.svg"
@@ -11,6 +20,7 @@ import { Button } from "../../components/Button"
 
 
 export default function Register() {
+    const navigate = useNavigate();
     const schema = yup.object({
         name: yup.string()
             .required('Campo obrigatório'),
@@ -37,6 +47,7 @@ export default function Register() {
     })
 
     const onSubmit = async (data) => {
+
         try {
             const { status } = await
                 api.post('/users',
@@ -50,9 +61,12 @@ export default function Register() {
                     },
                 )
             if (status === 200 || status === 201) {
+                setTimeout(() => {
+                    navigate('/login')
+                }, 2000)
                 toast.success("Conta criada com sucesso!")
             } else if (status === 409) {
-                toast.error("Email ja cadastrado! Faça login para continuar!")
+                toast.error(" Email em uso! Faça login para continuar!")
             } else {
                 throw new Error(" 😢 Erro ao criar conta")
             }
@@ -124,7 +138,7 @@ export default function Register() {
 
                 </Form>
 
-                <p>Já possui conta?<a href="/login">Clique aqui!</a></p>
+                <p>Já possui conta?<Link to="/login">Clique aqui!</Link></p>
 
             </RightContainer>
 

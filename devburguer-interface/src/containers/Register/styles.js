@@ -6,7 +6,7 @@ export const Container = styled.div`
     height: 100vh;
     width: 100vw;
 `
-
+import { Link as ReactLink } from 'react-router-dom'
 
 export const LeftContainer = styled.div`
 display: flex;
@@ -101,12 +101,16 @@ font-weight: 600;
 `
 
 
-export const Link = styled.a`
-   
-`
 
 
 export const Button = styled.button`
     
 
+`
+
+export const Link = styled(ReactLink)`
+text-decoration: none;
+color: #fff;
+padding: 0.3rem;
+cursor: pointer;
 `
