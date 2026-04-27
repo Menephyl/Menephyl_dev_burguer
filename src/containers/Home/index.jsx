@@ -1,7 +1,20 @@
-export default function Home() {
+import { Banner, Container, Content } from "./styles";
+
+function Home() {
     return (
-        <div>
-            <h1>Home</h1>
-        </div>
+        <main>
+            <Banner>
+                <h1>Seja <br />
+                    bem vindo(a)!</h1>
+            </Banner>
+            <Container>
+                <Content>
+                    <div>Carrosel Categorias</div>
+                    <div>Carrosel Produtos </div>
+                </Content>
+            </Container>
+        </main>
     )
 }
+
+export default Home;

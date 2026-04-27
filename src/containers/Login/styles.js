@@ -22,7 +22,7 @@ justify-content: center;
    max-width: 50%;
 
 img{
-    width: 80%;
+    width: 55%;
 }
 `
 
