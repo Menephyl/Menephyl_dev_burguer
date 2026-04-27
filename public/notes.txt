@@ -20,3 +20,12 @@ Rode o comando yarn add axios novamente.
 
 
 OU VOCE ACERTA OU TU APRENDE!
+
+
+vendor.js:159 Uncaught (in promise) Error: No Listener: tabs:outgoing.message.ready
+    at g (vendor.js:159:18553)
+createFormControl.ts:1295 Uncaught (in promise) AxiosErrorcode: "ERR_NETWORK"config: {transitional: {…}, adapter: Array(3), transformRequest: Array(1), transformResponse: Array(1), timeout: 0, …}event: ProgressEvent {isTrusted: true, lengthComputable: false, loaded: 0, total: 0, type: 'error', …}message: "Network Error"name: "AxiosError"request: XMLHttpRequest {onreadystatechange: null, readyState: 4, timeout: 0, withCredentials: false, upload: XMLHttpRequestUpload, …}stack: "AxiosError: Network Error\n    at XMLHttpRequest.handleError (http://localhost:5173/node_modules/.vite/deps/axios.js?v=043fb031:1637:19)\n    at Axios.request (http://localhost:5173/node_modules/.vite/deps/axios.js?v=043fb031:2223:41)"[[Prototype]]: Error
+createFormControl.ts:1295 Uncaught (in promise) AxiosError
+cadastro:1 [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://www.chromium.org/developers/design-documents/create-amazing-password-forms) <input type=​"password" name=​"password">​
+cadastro:1 [DOM] Input elements should have autocomplete attributes (suggested: "new-password"): (More info: https://www.chromium.org/developers/design-documents/create-amazing-password-forms) <input type=​"password" name=​"confirmPassword">​
+vendor.js:159 Uncaught (in promise) Error: No Listener: tabs:outgoing.message.ready
