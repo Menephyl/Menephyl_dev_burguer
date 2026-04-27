@@ -11,9 +11,12 @@ Aqui está o resumo do que significa cada parte:
 O Aviso (warning): Apenas informa que o seu projeto não tem um campo de licença (ex: MIT, ISC) definido no package.json. Pode ignorar, isso não quebra o código.
 O Erro (EPERM: operation not permitted): O Yarn tentou atualizar as dependências, mas não conseguiu mexer no arquivo do esbuild porque o seu servidor de desenvolvimento (yarn dev) está ligado e usando esse arquivo.
 
+
+
 Como resolver:
 
 Pare o projeto no terminal (Ctrl + C).
 Rode o comando yarn add axios novamente.
 
 
+OU VOCE ACERTA OU TU APRENDE!
