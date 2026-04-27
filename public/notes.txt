@@ -1,0 +1,19 @@
+o que significa , apenas me diga warning ..\..\..\package.json: No license field
+[1/4] Resolving packages...
+[2/4] Fetching packages...
+[3/4] Linking dependencies...
+error Error: EPERM: operation not permitted, unlink 'C:\Users\Yan\Documents\Projects\Menephyl_dev_burguer\node_modules\@esbuild\win32-x64\esbuild.exe'
+
+Esse erro significa que o arquivo esbuild.exe está bloqueado pelo Windows porque está sendo usado no momento.
+
+Aqui está o resumo do que significa cada parte:
+
+O Aviso (warning): Apenas informa que o seu projeto não tem um campo de licença (ex: MIT, ISC) definido no package.json. Pode ignorar, isso não quebra o código.
+O Erro (EPERM: operation not permitted): O Yarn tentou atualizar as dependências, mas não conseguiu mexer no arquivo do esbuild porque o seu servidor de desenvolvimento (yarn dev) está ligado e usando esse arquivo.
+
+Como resolver:
+
+Pare o projeto no terminal (Ctrl + C).
+Rode o comando yarn add axios novamente.
+
+
