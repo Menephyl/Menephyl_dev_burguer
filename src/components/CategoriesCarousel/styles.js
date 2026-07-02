@@ -1,55 +1,57 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom'
 export const Container = styled.div`
-   .carousel-item{
-    padding-right:40px;
-   }
-   .react-multiple-carousel__arrow--left{
-    left:15px;
-    top:10px;
-   }
-   .react-multiple-carousel__arrow--right{
-    top:10px;
-   }
-   padding-left: 30px;
-   cursor:grab;
+.carousel-item{
+    padding-right: 40px;
+    
+}
+padding-left:30px;
 `
 
 export const Title = styled.h2`
-font-size:32px;
-font-weight: 800;
-color:${(props) => props.theme.purple};
-padding-bottom:12px;
-position:relative;
-text-align:center;
-margin-bottom:40px;
-&::after{
-    content:'';
-    position:absolute;
-    bottom:0;
-    width:56px;
-    height:4px;
-    background:${(props) => props.theme.purple};
-    left:calc(50%-28px)
+font-size: 22px;
+color: #9758a6;
+padding-bottom: 1rem;
+position: relative;
+text-align: center;
+margin-top:1rem;
+&::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 4px;
+    background-color: #9758a6;
 }
+
 `
 export const ContainerItems = styled.div`
-background: url('${(props) => props.imageUrl}');
-background-position:center;
-background-size:cover;
-display:flex;
+display: flex;
+background:url('${props => props.imageUrl}') no-repeat;
 align-items: center;
-padding:20px 10px;
-width:100%;
-height:250px;
-border-radius:20px;
+width: 100%;
+padding: 20px 10px;
+height: 250px;
+background-position:center;
+background-size: cover;
+padding-left:30px;
+border-radius: 14px;
 
 p{
-
+    color: #ffffff;
+    font-size: 22.5px;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 10px 30px;
+    margin-top: 50px;
 }
 `
 export const CategoryButton = styled(Link)`
- 
+
+
 
 
 `
