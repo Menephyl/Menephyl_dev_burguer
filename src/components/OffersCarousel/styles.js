@@ -9,21 +9,21 @@ padding-left:30px;
 `
 
 export const Title = styled.h2`
-font-size: 22px;
-color: #9758a6;
+font-size:  1.875rem;;
+color: #61a120;
 padding-bottom: 1rem;
 position: relative;
 text-align: center;
-margin-top:1rem;
+margin:70px 0;
 &::after {
     content: '';
     position: absolute;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 56px;
-    height: 4px;
-    background-color: #9758a6;
+  bottom: 10px;
+  width: 56px;
+  height: 4px;
+  left: calc(50% - 28px);
+    background-color: #61a120; // ${(props) => props.theme.green};
+
 }
 
 `

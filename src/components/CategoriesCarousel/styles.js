@@ -32,7 +32,7 @@ margin-top:2.5rem;
 &::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     width: 56px;
     height: 4px;
     left: calc(50% - 28px);

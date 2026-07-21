@@ -1,20 +1,25 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { useNavigate } from 'react-router-dom';
 import { api } from "../../services/api";
-import { CategoryButton, Container, ContainerItems, Title } from './styles'
+import { Container, ContainerItems, Title } from './styles'
 
 export function OffersCarousel() {
-    const [categories, setCategories] = useState([]);
-    const navigate = useNavigate();
+    const [offers, setOffers] = useState([]);
+
+
     useEffect(() => {
-        async function loadCategories() {
-            const { data } = await api.get('/categories');
-            setCategories(data);
-            console.log(data);
+        async function loadProducts() {
+            const { data } = await api.get('/products');
+
+            const onlyOffers = data.filter((product) => product.offer);
+
+            setOffers(onlyOffers);
+
+
+            console.log(onlyOffers); // está indo corretamente no console
         }
-        loadCategories();
+        loadProducts();
 
     }, []);
 
@@ -47,28 +52,23 @@ export function OffersCarousel() {
     }
     return (
         <Container>
-            <Title>Ofertas do Dia!</Title>
+            <Title>Ofertas do Dia</Title>
             <Carousel
                 responsive={responsive}
                 infinite={true}
                 partialVisible={false}
                 autoPlay={false}
-            // autoPlaySpeed={2000}
-            // keyBoardControl={true}
-            // itemClass='carousel-item'
+                // autoPlaySpeed={2000}
+                // keyBoardControl={true}
+                itemClass='carousel-item'
             >
-                {categories.map(category => (
-                    <ContainerItems key={category.id} imageUrl={category.url}>
-                        <CategoryButton onClick={() => {
-                            navigate({
-                                pathName: '/cardapio',
-                                search: `?categoria=${category.id}`,
-                            });
-                        }}
-                        >
-                            {category.name}
-                        </CategoryButton>
-                    </ContainerItems>))}
+
+                {offers.map((product) => (
+                    <ContainerItems key={product.id} imageUrl={product.url}>
+                        <p>{product.name}</p>
+                    </ContainerItems>
+
+                ))}
 
             </Carousel>
         </Container>
