@@ -28,7 +28,7 @@ export const Container = styled.section`
     
 `
 export const Content = styled.div`
-
+padding-bottom: 4,375rem;
 `
 export const ContainerButton = styled.div`
    
