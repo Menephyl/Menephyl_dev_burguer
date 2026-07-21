@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useNavigate } from 'react-router-dom';
 import { api } from "../../services/api";
-import { Container, ContainerItems, Title } from './styles'
+import { CategoryButton, Container, ContainerItems, Title } from './styles'
 
 export function OffersCarousel() {
     const [categories, setCategories] = useState([]);
-
+    const navigate = useNavigate();
     useEffect(() => {
         async function loadCategories() {
             const { data } = await api.get('/categories');
@@ -46,19 +47,28 @@ export function OffersCarousel() {
     }
     return (
         <Container>
-            <Title>Categorias</Title>
+            <Title>Ofertas do Dia!</Title>
             <Carousel
                 responsive={responsive}
                 infinite={true}
                 partialVisible={false}
                 autoPlay={false}
-                autoPlaySpeed={2000}
-                keyBoardControl={true}
-                itemClass='carousel-item'
+            // autoPlaySpeed={2000}
+            // keyBoardControl={true}
+            // itemClass='carousel-item'
             >
-                {categories.map(category => (<ContainerItems key={category.id} imageUrl={category.url}> {category.name}
-
-                </ContainerItems>))}
+                {categories.map(category => (
+                    <ContainerItems key={category.id} imageUrl={category.url}>
+                        <CategoryButton onClick={() => {
+                            navigate({
+                                pathName: '/cardapio',
+                                search: `?categoria=${category.id}`,
+                            });
+                        }}
+                        >
+                            {category.name}
+                        </CategoryButton>
+                    </ContainerItems>))}
 
             </Carousel>
         </Container>

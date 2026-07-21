@@ -1,22 +1,22 @@
-import styled from "styled-components";
 import { Link } from 'react-router-dom'
+import styled from "styled-components";
 
 export const Container = styled.div`
 .carousel-item{
-    padding-right: 3.5rem;
+    padding-right: 2.5rem;
     
 }
-cursor: grab;
 
 .react-multiple-carousel__arrow--left {
-    left: 0.9375rem;
-    top: 0.625rem;
+    left: 15px;
+    
 }
 
 .react-multiple-carousel__arrow--right {
-    top: 0.25rem;
+    
 }
 padding-left:1.875rem;
+cursor: grab;   
 
 
 `
@@ -28,7 +28,7 @@ color: #9758a6;   // ${(props) => props.theme.purple};
 padding-bottom: 1rem;
 position: relative;
 text-align: center;
-margin-top:1rem;
+margin-top:2.5rem;
 &::after {
     content: '';
     position: absolute;
@@ -42,15 +42,15 @@ margin-top:1rem;
 
 `
 export const ContainerItems = styled.div`
-display: flex;
 background:url('${props => props.imageUrl}') no-repeat;
-align-items: center;
 background-position:center;
 background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;   // massa 
 width: 100%;
 padding: 20px 10px;
 height: 250px;
-
 border-radius: 20px;
 
 p{
@@ -77,7 +77,7 @@ export const CategoryButton = styled(Link)`
 
 
     &:hover {
-        background-color:  #9758a6;//${(props) => props.theme.purple};
+        background-color: #9758a6;//${(props) => props.theme.purple};
     }
 
 
