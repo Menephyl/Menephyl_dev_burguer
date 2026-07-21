@@ -12,10 +12,9 @@ export function OffersCarousel() {
         async function loadProducts() {
             const { data } = await api.get('/products');
 
-            const onlyOffers = data.filter((product) => product.offer);
+            const onlyOffers = data.filter((product) => product.offer)
 
             setOffers(onlyOffers);
-
 
             console.log(onlyOffers); // está indo corretamente no console
         }
@@ -64,7 +63,7 @@ export function OffersCarousel() {
             >
 
                 {offers.map((product) => (
-                    <ContainerItems key={product.id} imageUrl={product.url}>
+                    <ContainerItems key={product.id} imageurl={product.url}>
                         <p>{product.name}</p>
                     </ContainerItems>
 
