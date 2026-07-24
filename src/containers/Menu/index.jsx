@@ -3,15 +3,25 @@ import { useEffect, useState } from 'react'
 import { CardProduct } from '../../components/CardProduct'
 import { formatPrice } from '../../utils/formatPrice'
 import { Container, Banner, ProductsContainer, CategoryMenu, CategoryButton, } from './styles'
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 
 export default function Menu() {
 
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
     const [filteredProducts, setFilteredProducts] = useState([])
-    const [activeCategory, setActiveCategory] = useState([0])
+
     const navigate = useNavigate();
+    const { search } = useLocation()
+    const queryParams = new URLSearchParams(search)
+    const [activeCategory, setActiveCategory] = useState(() => {
+
+        const categoryId = +queryParams.get('categoria')
+        if (categoryId) {
+            return categoryId
+        } return 0
+
+    })
     useEffect(() => {
         async function loadCategories() {
             const { data } = await api.get('/categories')
