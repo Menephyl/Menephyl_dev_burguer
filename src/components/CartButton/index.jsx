@@ -5,7 +5,7 @@ export function CartButton({ ...props }) {
     return (
         <ContainerButton {...props}>
             <img src={Cart} alt='Meu carrinho' />
-            Meu carrinho
+
         </ContainerButton>
     )
 
