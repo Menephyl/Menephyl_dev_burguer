@@ -9,10 +9,12 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
 
 }
 button, a{
     cursor: pointer;    
 }
 `
-export default GlobalStyle
+export default GlobalStyle;

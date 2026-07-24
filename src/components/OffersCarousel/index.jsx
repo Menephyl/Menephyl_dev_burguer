@@ -1,22 +1,26 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
+import { useNavigate } from 'react-router-dom';
 import { api } from "../../services/api";
-import { Container, ContainerItems, Title } from './styles'
-
+import { Container, Title } from './styles'
+import { CardProduct } from '../CardProduct';
+import { formatPrice } from '../../utils/formatPrice';
 export function OffersCarousel() {
-    const [offers, setOffers] = useState([]);
 
+    const [offers, setOffers] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         async function loadProducts() {
             const { data } = await api.get('/products');
+            console.log(data)
+            const onlyOffers = data.products.filter(product => product.offer === true).map((product) => ({
+                ...product, currencyValue: formatPrice(product.price), ...product
 
-            const onlyOffers = data.filter((product) => product.offer)
-
+            }))
+            console.log(onlyOffers)
             setOffers(onlyOffers);
-
-            console.log(onlyOffers); // está indo corretamente no console
         }
         loadProducts();
 
@@ -50,23 +54,21 @@ export function OffersCarousel() {
 
     }
     return (
+        // autoPlaySpeed={2000}
         <Container>
             <Title>Ofertas do Dia</Title>
+
             <Carousel
                 responsive={responsive}
                 infinite={true}
                 partialVisible={false}
                 autoPlay={false}
-                // autoPlaySpeed={2000}
-                // keyBoardControl={true}
-                itemClass='carousel-item'
+            // autoPlaySpeed={2000}
+            // keyBoardControl={true}
+            // itemClass='carousel-item'
             >
-
-                {offers.map((product) => (
-                    <ContainerItems key={product.id} imageurl={product.url}>
-                        <p>{product.name}</p>
-                    </ContainerItems>
-
+                {offers.map(product => (
+                    <CardProduct key={product.id} product={product} />
                 ))}
 
             </Carousel>

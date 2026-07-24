@@ -15,7 +15,7 @@ export const Container = styled.div`
 .react-multiple-carousel__arrow--right {
     
 }
-padding-left:1.875rem;
+/* padding-left:1.875rem; */
 cursor: grab;   
 
 
