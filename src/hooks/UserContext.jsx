@@ -18,7 +18,7 @@ export const UserProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        const userInfoLocalStorage = localStoarge.getItem('devburuger:userData')
+        const userInfoLocalStorage = localStorage.getItem('devburuger:userData')
         if (userInfoLocalStorage) {
             setUserInfo(JSON.parse(userInfoLocalStorage))
         }
@@ -32,7 +32,7 @@ export const UserProvider = ({ children }) => {
 }
 
 
-const useUser = () => {
+export const useUser = () => {
     const context = useContext(UserContext)
     if (!context) {
         throw new Error('useUser must be a valid context')
