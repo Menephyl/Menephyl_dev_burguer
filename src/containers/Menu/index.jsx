@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 import { CardProduct } from '../../components/CardProduct'
 import { formatPrice } from '../../utils/formatPrice'
 import { Container, Banner, ProductsContainer, CategoryMenu, CategoryButton, } from './styles'
-import { useNavigate, useLocation } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
+import { useLocation } from "react-router-dom"
 
 export default function Menu() {
 
@@ -14,12 +15,14 @@ export default function Menu() {
     const navigate = useNavigate();
     const { search } = useLocation()
     const queryParams = new URLSearchParams(search)
-    const [activeCategory, setActiveCategory] = useState(() => {
 
+    const [activeCategory, setActiveCategory] = useState(() => {
+        console.log(useLocation())
         const categoryId = +queryParams.get('categoria')
         if (categoryId) {
             return categoryId
-        } return 0
+        }
+        return 0
 
     })
     useEffect(() => {

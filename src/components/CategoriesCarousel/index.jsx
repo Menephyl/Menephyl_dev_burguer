@@ -68,7 +68,8 @@ export function CategoriesCarousel() {
                         >
                             {category.name}
                         </CategoryButton>
-                    </ContainerItems>))}
+                    </ContainerItems>
+                ))}
 
             </Carousel>
         </Container>
