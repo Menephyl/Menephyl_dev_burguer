@@ -1,10 +1,11 @@
-import { api } from "../../services/api"
 import { useEffect, useState } from 'react'
+
+import { api } from "../../services/api"
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { CardProduct } from '../../components/CardProduct'
 import { formatPrice } from '../../utils/formatPrice'
 import { Container, Banner, ProductsContainer, CategoryMenu, CategoryButton, } from './styles'
-import { useNavigate } from "react-router-dom"
-import { useLocation } from "react-router-dom"
+
 
 export default function Menu() {
 
@@ -53,7 +54,9 @@ export default function Menu() {
         if (activeCategory === 0) {
             setFilteredProducts(products)
         } else {
-            const newFilteredProducts = products.filter(product => product.category_id === activeCategory,);
+            const newFilteredProducts = products.filter(product => product.category_id === activeCategory,
+
+            );
             setFilteredProducts(newFilteredProducts);
         }
     }, [products, activeCategory])
@@ -72,16 +75,19 @@ export default function Menu() {
 
             <CategoryMenu >
                 {categories.map((category) => (
-                    <CategoryButton key={category.id} $isActiveCategory={category.id === activeCategory} onClick={() => navigate({
-                        pathname: '/cardapio',
-                        search: `?categoria=${category.id}`
-                    },
-                        {
-                            replace: true,
-                        },
-                        setActiveCategory(category.id),
-
-                    )}
+                    <CategoryButton key={category.id} $isActiveCategory={category.id === activeCategory}
+                        onClick={() => {
+                            navigate(
+                                {
+                                    pathname: '/cardapio',
+                                    search: `?categora=${category.id}`,
+                                },
+                                {
+                                    replace: true,
+                                },
+                            );
+                            setActiveCategory(category.id)
+                        }}
                     >
                         {category.name}
                     </CategoryButton>
@@ -89,10 +95,9 @@ export default function Menu() {
             </CategoryMenu>
             <ProductsContainer>
                 {filteredProducts.map(product => (
-                    <CardProduct product={product} key={product.id} />
+                    <CardProduct key={product.id} product={product} />
                 ))}
             </ProductsContainer>
-
         </Container>
     )
 }

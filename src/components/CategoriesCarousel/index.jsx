@@ -59,6 +59,7 @@ export function CategoriesCarousel() {
             >
                 {categories.map(category => (
                     <ContainerItems key={category.id} imageUrl={category.url}>
+
                         <CategoryButton onClick={() => {
                             navigate({
                                 pathName: '/cardapio',
@@ -70,7 +71,6 @@ export function CategoriesCarousel() {
                         </CategoryButton>
                     </ContainerItems>
                 ))}
-
             </Carousel>
         </Container>
     )

@@ -13,6 +13,7 @@ export const Container = styled.div`
 }
 
 .react-multiple-carousel__arrow--right {
+    top: 10px;
     
 }
 /* padding-left:1.875rem; */

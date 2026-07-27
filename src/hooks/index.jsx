@@ -4,7 +4,7 @@
 import { UserProvider } from "./UserContext";
 const AppProvider = ({ Children }) => {
     return (
-        ~~<UserProvider>{Children}</UserProvider>
+        <UserProvider>{Children}</UserProvider>
 
     )
 
