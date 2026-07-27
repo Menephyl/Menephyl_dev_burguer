@@ -53,7 +53,7 @@ export default function Menu() {
         if (activeCategory === 0) {
             setFilteredProducts(products)
         } else {
-            const newFilteredProducts = products.filter(product => product.category_id === activeCategory);
+            const newFilteredProducts = products.filter(product => product.category_id === activeCategory,);
             setFilteredProducts(newFilteredProducts);
         }
     }, [products, activeCategory])

@@ -39,11 +39,8 @@ hr {
 `;
 
 export const HeaderLink = styled(Link)`
-color: #ffff;
-
-
-/* color: ${(props) => (props.$isActive ? (props) => props.theme.purple : (props) => props.theme.white)}; */
-/* border-bottom:  ${(props) => (props.$isActive ? `1px solid ${(props) => props.theme.purple}` : 'none')}; */
+color: ${(props) => (props.$isActive ? '#9758a9' : '#fff')} ;
+border-bottom: ${(props) => (props.$isActive ? '1px solid #9758a9' : 'none')} ;
 text-decoration: none;
 font-size: 14px;
 transition: color 200ms;

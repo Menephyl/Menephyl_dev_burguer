@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { useNavigate } from 'react-router-dom';
 import { api } from "../../services/api";
 import { Container, Title } from './styles'
 import { CardProduct } from '../CardProduct';
@@ -9,17 +8,15 @@ import { formatPrice } from '../../utils/formatPrice';
 export function OffersCarousel() {
 
     const [offers, setOffers] = useState([]);
-    const navigate = useNavigate();
+
 
     useEffect(() => {
         async function loadProducts() {
             const { data } = await api.get('/products');
-            console.log(data)
             const onlyOffers = data.products.filter(product => product.offer === true).map((product) => ({
                 ...product, currencyValue: formatPrice(product.price), ...product
 
             }))
-            console.log(onlyOffers)
             setOffers(onlyOffers);
         }
         loadProducts();

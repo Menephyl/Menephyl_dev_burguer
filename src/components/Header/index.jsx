@@ -1,36 +1,49 @@
 
-import { Container, Navigation, HeaderLink, Options, Profile, LinkContainer, Content } from "./styles"
-
-import { UserCircle, ShoppingCart } from '@phosphor-icons/react'
-
+import { Container, Navigation, HeaderLink, Options, Profile, LinkContainer, Content, Logout } from "./styles"
+import { useNavigate } from "react-router-dom";
+import { UserCircleIcon, ShoppingCartIcon } from '@phosphor-icons/react'
+import { useUser } from "../../hooks/UserContext";
 export function Header() {
+    const navigate = useNavigate();
+    const { logout, userInfo } = useUser();
+
+    const { pathname } = useResolvedPath();
+
+    function logoutUser() {
+        logout();
+        navigate('/login');
+    }
     return (
+
         <Container>
             <Content>
 
                 <Navigation>
                     <div>
-                        <HeaderLink>Home</HeaderLink>
-                        <HeaderLink>Cardápio</HeaderLink>
+                        <HeaderLink to="/" $isActive={pathname === '/'} >Home</HeaderLink>
+                        <HeaderLink to="/cardapio" $isActive={pathname === '/cardapio'}>Cardápio</HeaderLink>
                     </div>
                 </Navigation>
                 <Options>
                     <Profile>
-                        <UserCircle color='#fff' size={24} />
+                        <UserCircleIcon color='#fff' size={24} />
                         <div>
                             <p>
-                                Olá , <span></span>
+                                Olá , <span>{userInfo.name}</span>
                             </p>
-                            <Link>Sair</Link>
+                            <Logout onClick={logoutUser}>Sair</Logout>
                         </div>
                     </Profile>
                 </Options>
                 <LinkContainer>
-                    <ShoppingCart color='#fff' size={24} />
-                    <HeaderLink>Carrinho</HeaderLink>
+                    <ShoppingCartIcon color='#fff' size={24} />
+                    <HeaderLink to="/carrinho">Carrinho</HeaderLink>
                 </LinkContainer>
             </Content>
 
         </Container>
     )
 }
+
+
+export default Header;
