@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Texture from '../../assets/texture.svg'
-import Background from '../../assets/background-image.png'
+import Background from '../../assets/background.svg'
 export const Container = styled.section`
 
 width: 100vw;
@@ -8,7 +8,8 @@ height: 100%;
   background: linear-gradient(
     rgba(255,255,255,0.5),
     rgba(255,255,255,0.5)  
-    ), url('${Background}');
+    ),
+     url('${Background}');
     min-height: 100%;
     
 background-position: center;
@@ -78,3 +79,4 @@ padding: 40px;
 margin: 0 auto;
 
 `
+
