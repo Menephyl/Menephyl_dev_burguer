@@ -2,9 +2,9 @@
 
 
 import { UserProvider } from "./UserContext";
-const AppProvider = ({ Children }) => {
+const AppProvider = ({ children }) => {
     return (
-        <UserProvider>{Children}</UserProvider>
+        <UserProvider>{children}</UserProvider>
 
     )
 
