@@ -1,7 +1,7 @@
+import { Link as ReactLink } from 'react-router-dom'
 import styled from "styled-components";
 import BackgroundLogin from "../../assets/background-login.svg"
 import Background from "../../assets/bg-login.svg"
-import { Link as ReactLink } from 'react-router-dom'
 
 export const Container = styled.div`
     display: flex;
@@ -11,12 +11,12 @@ export const Container = styled.div`
 
 
 export const LeftContainer = styled.div`
+background: url(${BackgroundLogin});
+background-size: cover;
+background-position: center;
 display: flex;
 align-items: center;
 justify-content: center;
-    background: url(${BackgroundLogin});
-    background-size: cover;
-   background-position: center;
    height: 100%;
    width: 100%;
    max-width: 50%;
@@ -44,7 +44,7 @@ height: 100%;
 p{
     color: #fff;
     font-size: 1.125rem;
-    font-weight: 800;
+    font-wefont-family: "Road Rage", sans-serif !important;ight: 800;
 }
 
 a {
@@ -59,11 +59,12 @@ a {
 
 export const Title = styled.h2`
     font-size: 2.5rem;
-     font-family: "Road Rage", sans-serif;
+     font-family: "Road Rage", sans-serif !important;
      color: #fff;
 
      span{
      color: #9758a6;
+     font-family: "Road Rage", sans-serif !important;
      }
 `
 
