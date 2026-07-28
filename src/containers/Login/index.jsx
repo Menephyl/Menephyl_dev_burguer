@@ -73,10 +73,10 @@ export default function Login() {
                 <img src={logo} alt='logo-devburguer' />
             </LeftContainer>
             <RightContainer>
-                <Title>Olá, seja bem vindo ao <span>Dev
+                <Title>Olá, seja bem vindo(a) ao <span>Dev
                     Burguer!</span>
                     <br />
-                    Acesse com seu <span> Login e senha.</span>
+                    Acesse com seu <span> Login e senha!</span>
                 </Title>
                 <Form onSubmit={handleSubmit(onSubmit)}>
                     <InputContainer>
