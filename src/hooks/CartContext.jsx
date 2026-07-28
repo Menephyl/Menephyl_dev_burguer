@@ -9,11 +9,15 @@ export const CartProvider = ({ children }) => {
     const putProductInCart = (product) => {
         const cartIndex = cartProducts.findIndex((prd) => prd.id === product.id)
 
-        console.log(cartIndex)
+
         let newProductsInCart = []
         //criei uma variavel para guardar o estado atual do carrinho.  
+
         if (cartIndex >= 0) {
-            newProductsInCart[cartIndex].quantity = newProductsInCart[cartIndex].quantity + 1
+            newProductsInCart = cartProducts;
+
+            newProductsInCart[cartIndex].quantity = newProductsInCart[cartIndex].quantity + 1;
+
             setCartProducts(newProductsInCart)
         } else {
             product.quantity = 1
@@ -21,12 +25,6 @@ export const CartProvider = ({ children }) => {
             setCartProducts(newProductsInCart)
         }
         updateLocalStorage(newProductsInCart)
-
-
-        useEffect(() => {
-            console.log(cartProducts)
-        }, [cartProducts])
-
         /* 
         REGRAS DE NEGÓCIOS
         produto chegou 
@@ -37,15 +35,20 @@ export const CartProvider = ({ children }) => {
         */
     }
 
-    const clearCart = (product) => {
-
-
+    const clearCart = () => {
+        setCartProducts([])
+        updateLocalStorage([])
     }
+
+
     const deleteProduct = (productId) => {
+
         const newCart = cartProducts.filter((prd) => prd.id !== productId)
         setCartProducts(newCart)
         updateLocalStorage(newCart)
     }
+
+
     const increaseProduct = (productId) => {
         const newCart = cartProducts.map(prd => {
             return prd.id === productId ? { ...prd, quantity: prd.quantity + 1 } : prd
@@ -56,11 +59,12 @@ export const CartProvider = ({ children }) => {
 
     const decreaseProduct = (productId) => {
         const cartIndex = cartProducts.findIndex((prd) => prd.id === productId)
+
         if (cartProducts[cartIndex].quantity > 1) {
             const newCart = cartProducts.map((prd) => {
-                return prd.id === productId ? {
-                    ...prd, quatity: prd.quantity - 1
-                } : prd;
+                return prd.id === productId
+                    ? { ...prd, quatity: prd.quantity - 1 }
+                    : prd;
             })
             setCartProducts(newCart)
             updateLocalStorage(newCart)
@@ -71,6 +75,7 @@ export const CartProvider = ({ children }) => {
     const updateLocalStorage = (products) => {
         localStorage.setItem('devburguer:cartInfo', JSON.stringify(products))
     }
+
     useEffect(() => {
         const clientCartData = localStorage.getItem('devburguer:cartInfo')
         if (clientCartData) {

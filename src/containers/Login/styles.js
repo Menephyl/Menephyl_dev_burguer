@@ -44,7 +44,8 @@ height: 100%;
 p{
     color: #fff;
     font-size: 1.125rem;
-    font-wefont-family: "Road Rage", sans-serif !important;ight: 800;
+    font-family: "Road Rage", sans-serif !important ;
+    font-weight: 800;
 }
 
 a {
