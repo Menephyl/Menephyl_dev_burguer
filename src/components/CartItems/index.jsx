@@ -69,6 +69,9 @@ export function CartItems() {
                 ) : (
                     <EmptyCart>
                         Carrinho Vazio
+                        <span style={{ fontSize: '10px' }}>
+                            <br />Volte para o cardápio <br /> Aguarde a confirmação do pedido<br />Se acabou de fazer! Obrigado!.
+                        </span>
                     </EmptyCart>
                 )}
             </Table.Body>

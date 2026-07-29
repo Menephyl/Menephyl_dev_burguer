@@ -75,7 +75,6 @@ export function CartResume() {
                 <div className="container-bottom">
 
                     <p>Total</p>
-
                     <p>{formatPrice(finalPrice + deliveryTax)}</p>
 
                 </div>

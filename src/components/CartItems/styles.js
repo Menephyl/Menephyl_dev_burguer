@@ -38,6 +38,7 @@ export const EmptyCart = styled.p`
 font-size:20px;
 text-align:center;
 font-weight:bold;
+padding:10px;
 
 `
 

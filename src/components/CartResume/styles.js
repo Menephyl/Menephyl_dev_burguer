@@ -2,9 +2,10 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
 background-color:#ffff;
-padding:20px;
 border-radius: 20px;
+
 display: flex;
+flex-direction:column;
 justify-content: space-between;
 margin-bottom: 20px;
 
@@ -22,10 +23,7 @@ margin-bottom: 20px;
     grid-template-areas:
     'title title '
     'items items-price'
-    'delivery-tax delivery-tax-price'
-    'container-bottom container-bottom'
-    
-    ;
+    'delivery-tax delivery-tax-price' ;
 
     .title{
         grid-area: title;
@@ -34,10 +32,9 @@ margin-bottom: 20px;
         margin-bottom: 20px;
         background-color: #484848;
         color: #fff;
-        padding: 10px;
+        padding: 15px;
         text-align: center;
-        border-top-left-radius: 20px;
-        border-top-right-radius: 20px;
+       border-radius: 20px 20px 0 0;
 
     }
     .items{
@@ -56,14 +53,21 @@ margin-bottom: 20px;
         grid-area: delivery-tax-price;
         padding-left:20px;
     }
-    .container-bottom{
-        grid-area: container-bottom;
-       
-        justify-content: space-between;
-        padding: 10px;
-        border-top: 1px solid #cdcdcd;
-        
-    }
+
 }
+ 
+.container-bottom{
+        display: flex;
+        justify-content: space-between;
+        font-size: 20px;
+        font-weight: 700;
+        margin-top: 24px;
+        padding:20px;
+
+        *{
+        font-weight: 700;
+        }
+
+    }
 
 `
