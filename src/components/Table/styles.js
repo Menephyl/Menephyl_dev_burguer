@@ -11,14 +11,17 @@ export const Header = styled.thead`
 
 `
 export const Tr = styled.tr`
+background-color: #484848;
+
 
 `
 
 export const Th = styled.th`
 padding: 16px;
 text-align: left;
-color: #484848;
-border-bottom: 1px solid #cdcdcd;
+
+color: #fff;
+
 
 &:first-child{
 border-top-left-radius:20px;

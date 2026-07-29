@@ -1,16 +1,15 @@
 import styled from 'styled-components'
 import Texture from '../../assets/texture.svg'
 import Background from '../../assets/background.svg'
-export const Container = styled.section`
 
-width: 100vw;
-height: 100%;
+export const Container = styled.section`
+width: 100%;
   background: linear-gradient(
     rgba(255,255,255,0.5),
     rgba(255,255,255,0.5)  
     ),
      url('${Background}');
-    min-height: 100%;
+    min-height: 100vh;
     
 background-position: center;
 background-size:cover;
@@ -19,15 +18,17 @@ background-color: #1f1f1f;
 
 `
 export const Banner = styled.div`
+background:url('${Texture}') no-repeat; 
+background-color: #1f1f1f;
+background-size:cover;
+background-position: center;
 display: flex;
 justify-content: center;
 align-items: center;
-background:url('${Texture}') no-repeat;
-background-position: center;
 width: 100%;
-height:450px;
-background-size:cover;
-background-color: #1f1f1f;
+height: 180px;
+
+position: relative;
 
 /* background-color: ${(props) => props.theme.secondWhite}; */
 img{
@@ -51,30 +52,32 @@ h1 {
 }
 
 `
-export const Title = styled.div`
+
+export const Title = styled.h1`
 font-size: 32px;
 font-weight: 800;
 padding-bottom:12px;
-color:#61a120;
+color:#000000;
 text-align: center;
+position: relative;
+
 
 &::after{
     position:absolute;
-    left: calc(50%+ - 28px);
+    left: calc(50% - 28px);
     bottom: 0;
     content: '';
     width: 56px;
-    height: 4px;
-    background-color: #61a120;
+    height: 5px;
+    background-color: #000000;
 }
 `
-
 export const Content = styled.div`
 display:grid;
 grid-template-columns: 1fr 30%;
 width: 100%;
-max-width: 1280px;
 gap: 40px;
+max-width: 1280px;
 padding: 40px;
 margin: 0 auto;
 

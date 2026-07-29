@@ -20,9 +20,11 @@ margin-bottom: 20px;
     display: grid;
     grid-gap: 10px 30%;
     grid-template-areas:
-    'title title'
+    'title title '
     'items items-price'
     'delivery-tax delivery-tax-price'
+    'container-bottom container-bottom'
+    
     ;
 
     .title{
@@ -54,8 +56,14 @@ margin-bottom: 20px;
         grid-area: delivery-tax-price;
         padding-left:20px;
     }
-
-
+    .container-bottom{
+        grid-area: container-bottom;
+       
+        justify-content: space-between;
+        padding: 10px;
+        border-top: 1px solid #cdcdcd;
+        
+    }
 }
 
 `

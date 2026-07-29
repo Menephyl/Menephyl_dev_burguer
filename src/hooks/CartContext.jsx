@@ -9,7 +9,6 @@ export const CartProvider = ({ children }) => {
     const putProductInCart = (product) => {
         const cartIndex = cartProducts.findIndex((prd) => prd.id === product.id)
 
-
         let newProductsInCart = []
         //criei uma variavel para guardar o estado atual do carrinho.  
 
@@ -50,7 +49,7 @@ export const CartProvider = ({ children }) => {
 
 
     const increaseProduct = (productId) => {
-        const newCart = cartProducts.map(prd => {
+        const newCart = cartProducts.map((prd) => {
             return prd.id === productId ? { ...prd, quantity: prd.quantity + 1 } : prd
         })
         setCartProducts(newCart)
@@ -63,7 +62,7 @@ export const CartProvider = ({ children }) => {
         if (cartProducts[cartIndex].quantity > 1) {
             const newCart = cartProducts.map((prd) => {
                 return prd.id === productId
-                    ? { ...prd, quatity: prd.quantity - 1 }
+                    ? { ...prd, quantity: prd.quantity - 1 }
                     : prd;
             })
             setCartProducts(newCart)
@@ -84,7 +83,8 @@ export const CartProvider = ({ children }) => {
     }, [])
 
     return (
-        <CartContext.Provider value={{ cartProducts, putProductInCart, clearCart, deleteProduct, increaseProduct, decreaseProduct }}>
+        <CartContext.Provider value={{ cartProducts, putProductInCart, clearCart, deleteProduct, increaseProduct, decreaseProduct }}
+        >
             {children}
         </CartContext.Provider>
 
