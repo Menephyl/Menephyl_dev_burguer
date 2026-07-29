@@ -1,4 +1,4 @@
-export * from './Home'
+export { default as Home } from './Home' // interessante. Eu exporto como padrão o arquivo home
 export * from './Cart'
 export * from './Login'
 export * from './Register'

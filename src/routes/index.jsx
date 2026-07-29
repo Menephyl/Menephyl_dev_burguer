@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 
 // import { Home, Cart, Login, Menu, Register } from '../containers/index'
-import { Home, Cart, Login, Menu, Register } from '../containers'
+import { Home, Cart, Login, Menu, Register } from '../containers/index'
 
 import { Header } from "../components/Header";
 

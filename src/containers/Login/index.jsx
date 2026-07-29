@@ -19,7 +19,7 @@ import logo from "../../assets/Logo 1.svg"
 import { Button } from "../../components/Button"
 
 
-export default function Login() {
+export function Login() {
     const navigate = useNavigate();
     const { putUserData } = useUser()
     const schema = yup.object({

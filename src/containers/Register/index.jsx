@@ -19,7 +19,7 @@ import { Button } from "../../components/Button"
 
 
 
-export default function Register() {
+export function Register() {
     const navigate = useNavigate();
     const schema = yup.object({
         name: yup.string()

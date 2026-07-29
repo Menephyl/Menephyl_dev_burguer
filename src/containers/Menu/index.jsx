@@ -7,7 +7,7 @@ import { formatPrice } from '../../utils/formatPrice'
 import { Container, Banner, ProductsContainer, CategoryMenu, CategoryButton, } from './styles'
 
 
-export default function Menu() {
+export function Menu() {
 
     const [categories, setCategories] = useState([])
     const [products, setProducts] = useState([])
