@@ -32,8 +32,28 @@ export function CartResume() {
                 price: product.price,
             }
         })
-
         try {
+            const response = await api.post('/create-payment-intent', {
+                products,
+
+            })
+            console.log(response)
+        } catch (err) {
+            console.log(err)
+            toast.error('Houve um erro ao finalizar o pedido. Tente novamente!', {
+                position: 'top-right',
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: 'dark',
+                transition: Bounce,
+            })
+        }
+
+        /*try {
             const { status } = await api.post('orders', { products },
                 {
                     validateStatus: () => true,
@@ -59,6 +79,7 @@ export function CartResume() {
         } catch (error) {
             toast.error('😭😥 Falha no sistema! Tente novamete mais tarde ou liga pra nois! (35) 9 9213-4176!')
         }
+        */
     }
     return (
         <div>
