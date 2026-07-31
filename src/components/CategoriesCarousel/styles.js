@@ -75,10 +75,8 @@ export const CategoryButton = styled(Link)`
     margin-top: 50px;
     font-weight: 500;
     text-decoration: none;
-
-
     &:hover {
-        background-color: #9758a6;//${(props) => props.theme.purple};
+        background-color: #4b1658ff;//${(props) => props.theme.purple};
     }
 
 

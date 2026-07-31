@@ -8,9 +8,11 @@ import { CategoryButton, Container, ContainerItems, Title } from './styles'
 export function CategoriesCarousel() {
     const [categories, setCategories] = useState([]);
     const navigate = useNavigate();
+
     useEffect(() => {
         async function loadCategories() {
             const { data } = await api.get('/categories');
+
             setCategories(data);
 
         }
@@ -53,25 +55,27 @@ export function CategoriesCarousel() {
                 infinite={true}
                 partialVisible={false}
                 autoPlay={false}
+                itemClass="carousel-item"
             // autoPlaySpeed={2000}
             // keyBoardControl={true}
             // itemClass='carousel-item'
             >
                 {categories.map(category => (
                     <ContainerItems key={category.id} imageUrl={category.url}>
-
                         <CategoryButton onClick={() => {
                             navigate({
-                                pathName: '/cardapio',
+                                pathname: '/cardapio',
                                 search: `?categoria=${category.id}`,
-                            });
+                            })
                         }}
                         >
                             {category.name}
                         </CategoryButton>
+
+
                     </ContainerItems>
                 ))}
             </Carousel>
-        </Container>
+        </Container >
     )
 }
