@@ -18,7 +18,7 @@ export function Menu() {
     const queryParams = new URLSearchParams(search)
 
     const [activeCategory, setActiveCategory] = useState(() => {
-        console.log(useLocation())
+
         const categoryId = +queryParams.get('categoria')
         if (categoryId) {
             return categoryId

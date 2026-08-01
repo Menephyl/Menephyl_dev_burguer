@@ -35,7 +35,7 @@ img{
 height: 130px;
 }
 
-h1 {
+/* h1 {
   font-family: 'Road Rage', sans-serif;
   font-size: 80px;
   line-height: 65px;
@@ -49,7 +49,7 @@ h1 {
     color: #fff; // ${(props) => props.theme.darkWhite};
     font-size: 20px;
      }
-}
+} */
 
 `
 

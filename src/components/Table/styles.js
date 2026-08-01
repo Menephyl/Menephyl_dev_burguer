@@ -11,7 +11,7 @@ export const Header = styled.thead`
 
 `
 export const Tr = styled.tr`
-background-color: #484848;
+
 
 
 `
@@ -19,7 +19,7 @@ background-color: #484848;
 export const Th = styled.th`
 padding: 16px;
 text-align: left;
-
+background-color: #484848;
 color: #fff;
 
 
@@ -37,7 +37,7 @@ border-top-right-radius:20px;
 export const Td = styled.td`
 padding: 16px;
 font-weight: 500;
-color: #484848;
+
 line-height: 115%;
 border-bottom: 1px solid #cdcdcd;
 `

@@ -1,13 +1,13 @@
 import TrashIcon from "../../assets/trash.svg"
 import { useCart } from "../../hooks/CartContext"
 import { Table } from "../index"
-
+import { formatPrice } from '../../utils/formatPrice'
 import {
     ButtonGroup,
     EmptyCart,
     ProductImage,
     ProductTotalPrice,
-    TrashImage
+    TrashImage,
 } from "./styles"
 
 
@@ -55,7 +55,6 @@ export function CartItems() {
 
                         <Table.Td>
                             <ProductTotalPrice>
-
                                 {formatPrice(product.quantity * product.price)}
                             </ProductTotalPrice>
                         </Table.Td>
@@ -68,10 +67,13 @@ export function CartItems() {
                 ))
                 ) : (
                     <EmptyCart>
-                        Carrinho Vazio
-                        <span style={{ fontSize: '10px' }}>
-                            <br />Volte para o cardápio <br /> Aguarde a confirmação do pedido<br />Se acabou de fazer! Obrigado!.
-                        </span>
+
+                        <Table.Td>
+                            Carrinho Vazio
+                            <span style={{ fontSize: '10px' }}>
+                                <br />Volte para o cardápio <br /> Aguarde a confirmação do pedido<br />Se acabou de fazer! Obrigado!.
+                            </span>
+                        </Table.Td>
                     </EmptyCart>
                 )}
             </Table.Body>
