@@ -7,6 +7,7 @@ const UserContext = createContext({})
 
 export const UserProvider = ({ children }) => {
     const [userInfo, setUserInfo] = useState({})
+
     const putUserData = (userInfo) => {
         setUserInfo(userInfo)
         localStorage.setItem('devburguer:userData', JSON.stringify(userInfo))
