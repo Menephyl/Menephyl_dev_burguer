@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
 background-color:#1f1f1f;
-/* background-color: ${(props) => props.theme.mainBlack}; */
+background-color: ${(props) => props.theme.mainBlack}; 
 width: 100%;
 height: 72px;
 padding: 0 56px;
@@ -34,7 +34,7 @@ div {
 
 hr {
   height: 24px;
-  /* border: 1px solid ${(props) => props.theme.darkGray}; */
+  border: 1px solid ${(props) => props.theme.darkGray}; 
  }
 `;
 

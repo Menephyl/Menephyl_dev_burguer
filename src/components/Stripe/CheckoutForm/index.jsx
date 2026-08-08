@@ -7,8 +7,8 @@ import {
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import { useCart } from '../../hooks/CartContext.jsx';
-import { api } from '../../services/api';
+import { useCart } from '../../../hooks/CartContext.jsx';
+import { api } from '../../../services/api.js';
 import '../styles.css';
 
 
@@ -90,8 +90,7 @@ export function CheckoutForm() {
 
         } else {
             navigate(
-                `/complete?payment_intent_client_secret=${paymentIntent.client_secret
-                }`,
+                `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
             )
         }
 
