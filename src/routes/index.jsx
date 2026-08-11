@@ -7,15 +7,17 @@ import {
     Home,
     Login,
     Menu,
+    Admin,
     //    Orders,
     Register,
 } from '../containers';
+import { AdminLayout } from '../layouts/AdminLayout';
 /*
 import { EditProduct } from '../containers/Admin/EditProduct';
 import { NewProduct } from '../containers/Admin/NewProduct';
 import { Products } from '../containers/Admin/Products';
 
-import { AdminLayout } from '../layouts/AdminLayout';
+
 import { UserLayout } from '../layouts/UserLayout';
 
 */
@@ -32,29 +34,33 @@ export function Router() {
                 <Route path="/complete" element={<CompletePayment />}></Route>
             </Route>
 
+            <Route path="/admin" element={<AdminLayout />}>
+                <Route path="/admin/pedidos" element={<Orders />}></Route>
+                <Route path="/admin/home" element={<Admin />} />
+                <Route path="/admin/editar-produto" element={<EditProduct />}></Route>
+                <Route path="/admin/novo-produto" element={<NewProduct />}></Route>
+                <Route path="/admin/produtos" element={<Products />}></Route>
+
+            </Route>
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Register />} />
         </Routes>
 
+
+
         /*
         <Routes>
-              <Route path="/" element={<UserLayout />}>
-                  <Route path="/" element={<Home />}></Route>
-                  <Route path="/Cardapio" element={<Menu />}></Route>
-                  <Route path="/carrinho" element={<Cart />}></Route>
-                  <Route path="/checkout" element={<Checkout />}></Route>
-                  <Route path="/complete" element={<CompletePayment />}></Route>
-              </Route>
-  
-              <Route path="/admin" element={<AdminLayout />}>
-                  <Route path="/admin/pedidos" element={<Orders />}></Route>
-                  <Route path="/admin/editar-produto" element={<EditProduct />}></Route>
-                  <Route path="/admin/novo-produto" element={<NewProduct />}></Route>
-                  <Route path="/admin/produtos" element={<Products />}></Route>
-              </Route>
-  
-             
-          </Routes>
-          */
+          <Route path="/" element={<UserLayout />}>
+              <Route path="/" element={<Home />}></Route>
+              <Route path="/Cardapio" element={<Menu />}></Route>
+              <Route path="/carrinho" element={<Cart />}></Route>
+              <Route path="/checkout" element={<Checkout />}></Route>
+              <Route path="/complete" element={<CompletePayment />}></Route>
+          </Route>
+        
+ 
+         
+      </Routes>
+    */
     );
 }
