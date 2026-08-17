@@ -31,7 +31,7 @@ padding-bottom: 40px;
 export const Title = styled.h2`
 font-size: 2rem;
 font-weight: 800;
-color: #61a120;
+color:${(props) => props.theme.green};
 padding-bottom: 1rem;
 position: relative;
 text-align: center;
@@ -45,7 +45,7 @@ margin:50px 0;
   width: 56px;
   height: 4px;
   left: calc(50% - 28px);
-    background-color: #61a120; // ${(props) => props.theme.green};
+    background-color: ${(props) => props.theme.green};
 
 }
 

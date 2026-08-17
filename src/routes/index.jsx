@@ -8,19 +8,19 @@ import {
     Login,
     Menu,
     Admin,
-    //    Orders,
+    Orders,
     Register,
 } from '../containers';
 import { AdminLayout } from '../layouts/AdminLayout';
-/*
-import { EditProduct } from '../containers/Admin/EditProduct';
+
+import { EditProduct } from '../containers/Admin/EditProduct/index';
 import { NewProduct } from '../containers/Admin/NewProduct';
 import { Products } from '../containers/Admin/Products';
 
 
 import { UserLayout } from '../layouts/UserLayout';
 
-*/
+
 
 export function Router() {
     return (
@@ -46,21 +46,5 @@ export function Router() {
             <Route path="/cadastro" element={<Register />} />
         </Routes>
 
-
-
-        /*
-        <Routes>
-          <Route path="/" element={<UserLayout />}>
-              <Route path="/" element={<Home />}></Route>
-              <Route path="/Cardapio" element={<Menu />}></Route>
-              <Route path="/carrinho" element={<Cart />}></Route>
-              <Route path="/checkout" element={<Checkout />}></Route>
-              <Route path="/complete" element={<CompletePayment />}></Route>
-          </Route>
-        
- 
-         
-      </Routes>
-    */
     );
 }

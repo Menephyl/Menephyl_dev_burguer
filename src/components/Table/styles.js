@@ -3,7 +3,7 @@ import styled from "styled-components"
 export const Root = styled.table`
 width: 100%;
 border-collapse: collapse;
-background-color: #fff;
+background-color: ${(props) => props.theme.white};
 border-radius: 20px;
 `
 
@@ -19,8 +19,8 @@ export const Tr = styled.tr`
 export const Th = styled.th`
 padding: 16px;
 text-align: left;
-background-color: #484848;
-color: #fff;
+background-color: ${(props) => props.theme.lightGray};
+color: ${(props) => props.theme.white};
 
 
 &:first-child{
@@ -37,9 +37,8 @@ border-top-right-radius:20px;
 export const Td = styled.td`
 padding: 16px;
 font-weight: 500;
-
 line-height: 115%;
-border-bottom: 1px solid #cdcdcd;
+border-bottom: 1px solid ${(props) => props.theme.lightGray};
 `
 
 export const Body = styled.tbody``

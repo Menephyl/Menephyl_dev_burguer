@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { api } from "../../services/api";
+import { api } from "../src/services/api";
 import { Container, Title } from './styles'
-import { CardProduct } from '../CardProduct';
-import { formatPrice } from '../../utils/formatPrice';
+import { CardProduct } from '../src/components/CardProduct';
+import { formatPrice } from '../src/utils/formatPrice';
 
 export function OffersCarousel() {
 

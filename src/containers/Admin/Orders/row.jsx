@@ -13,7 +13,7 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { api } from '../../../services/api';
 import { formatDate } from '../../../utils/formatDate';
-
+import { Orders } from '.'
 import { OrderStatusOptions } from './orderStatus';
 import { ProductImage, SelectStatus } from './styles';
 
@@ -29,6 +29,7 @@ export function Row({ row, setOrders, orders }) {
 
             const newOrders = orders.map((order) =>
                 order._id === id ? { ...order, status } : order,
+
             );
             setOrders(newOrders);
         } catch (error) {
@@ -49,12 +50,17 @@ export function Row({ row, setOrders, orders }) {
                     >
                         {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
                     </IconButton>
+
                 </TableCell>
+
                 <TableCell component="th" scope="row">
                     {row.orderId}
                 </TableCell>
+
                 <TableCell>{row.name}</TableCell>
+
                 <TableCell> {formatDate(row.date)}</TableCell>
+
                 <TableCell>
                     <SelectStatus
                         options={OrderStatusOptions.filter((status) => status.id !== 0)}
@@ -70,6 +76,7 @@ export function Row({ row, setOrders, orders }) {
                     />
                 </TableCell>
             </TableRow>
+
             <TableRow>
                 <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
                     <Collapse in={open} timeout="auto" unmountOnExit>
@@ -92,14 +99,18 @@ export function Row({ row, setOrders, orders }) {
                                             <TableCell component="th" scope="row">
                                                 {product.quantity}
                                             </TableCell>
+
                                             <TableCell>{product.name}</TableCell>
+
                                             <TableCell>{product.category}</TableCell>
+
                                             <TableCell>
                                                 <ProductImage src={product.url} alt={product.name} />
                                             </TableCell>
                                         </TableRow>
                                     ))}
                                 </TableBody>
+
                             </Table>
                         </Box>
                     </Collapse>

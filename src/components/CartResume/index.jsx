@@ -1,21 +1,21 @@
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { api } from "../../services/api";
 import { Container } from "./styles";
+import { formatPrice } from "../../utils/formatPrice";
+import { useCart } from "../../hooks/CartContext";
 import { Button } from "../../components/Button";
 import { toast } from "react-toastify";
-import { useEffect, useState } from "react";
-import { useCart } from "../../hooks/CartContext";
-import { api } from "../../services/api";
-import { formatPrice } from "../../utils/formatPrice";
-import { useNavigate } from "react-router-dom";
 
 export function CartResume() {
     const [finalPrice, setFinalPrice] = useState(0)
     const [deliveryTax] = useState(50)
 
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const { cartProducts, clearCart } = useCart()
-
+    ''
     useEffect(() => {
         const sumAllItems = cartProducts.reduce((acc, currency) => {
             return currency.price * currency.quantity + acc

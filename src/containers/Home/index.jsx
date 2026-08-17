@@ -1,3 +1,4 @@
+import { use } from 'react'
 import { OffersCarousel, CategoriesCarousel } from "../../components";
 import { Banner, Container } from "./styles";
 
@@ -15,8 +16,6 @@ export default function Home() {
                     <CategoriesCarousel />
                     <OffersCarousel />
                 </div>
-
-
             </Container>
         </main>
     )

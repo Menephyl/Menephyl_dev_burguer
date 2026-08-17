@@ -13,7 +13,7 @@ export const standardTheme = {
     white: '#fff',
     secondWhite: '#f0f0f0',
     darkWhite: '#f4f4f4',
-    gren: '#61a120',
+    green: '#61a120',
     cinzaNoturno: '#1e1e1e',
     cinzaNetro: '#9a9a9d',
     roadRageFont: '"Road Rage", sans-serif',

@@ -6,7 +6,7 @@ import {
     ButtonGroup,
     EmptyCart,
     ProductImage,
-    ProductTotalPrice,
+    ProductTotalPrice,   // TotalPrice is deprecated. 
     TrashImage,
 } from "./styles"
 
@@ -37,7 +37,7 @@ export function CartItems() {
                             {product.name}
                         </Table.Td>
 
-                        <Table.Td>
+                        <Table.Td>  {/*se der null colocar currency.value*/}
                             {product.currency}
                         </Table.Td>
 

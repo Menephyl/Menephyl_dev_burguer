@@ -27,7 +27,7 @@ export function Products() {
 
     function isOffer(offer) {
         if (offer) {
-            return <CheckCicle color="#61a120" size="28px" />
+            return <CheckCircle color="#61a120" size="28px" />
         } else {
             return <XCircle color="#ff3205" size="28px" />
         }

@@ -1,10 +1,3 @@
-// export function CompletePayment() {
-//     return (
-//         <div>
-//             <h1>Checkout</h1>
-//         </div>
-//     )
-// }
 
 
 import { useStripe } from '@stripe/react-stripe-js';
@@ -195,7 +188,7 @@ export function CompletePayment() {
                 )}
                 <a id="retry-button" href={STATUS_CONTENT_MAP[status].url}>
                     {STATUS_CONTENT_MAP[status].buttonText}
-           
+
                 </a>
             </div>
         </div>

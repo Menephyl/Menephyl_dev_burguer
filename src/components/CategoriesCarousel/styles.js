@@ -25,7 +25,7 @@ cursor: grab;
 export const Title = styled.h2`
 font-size: 1.875rem;
 font-weight: 800;
-color: #9758a6;   // ${(props) => props.theme.purple};
+color:  ${(props) => props.theme.purple};
 padding-bottom: 1rem;
 position: relative;
 text-align: center;
@@ -37,7 +37,7 @@ margin-top:2.5rem;
     width: 56px;
     height: 4px;
     left: calc(50% - 28px);
-    background-color: #9758a6; // ${(props) => props.theme.purple};
+    background-color:  ${(props) => props.theme.purple};
     
 }
 
@@ -76,7 +76,7 @@ export const CategoryButton = styled(Link)`
     font-weight: 500;
     text-decoration: none;
     &:hover {
-        background-color: #4b1658ff;//${(props) => props.theme.purple};
+        background-color:  ${(props) => props.theme.secondDarkPurple};
     }
 
 

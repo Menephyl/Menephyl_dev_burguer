@@ -1,6 +1,11 @@
 // ler UseContext react library 
 
-import { createContext, useContext, useState, useEffect } from "react";
+import {
+    createContext,
+    useContext,
+    useState,
+    useEffect
+} from "react";
 
 
 const UserContext = createContext({})
@@ -38,6 +43,6 @@ export const useUser = () => {
     if (!context) {
         throw new Error('useUser must be a valid context')
     }
-    return context
+    return context;
 
 }

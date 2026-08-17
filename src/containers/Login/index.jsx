@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup'
 import { api } from "../../services/api"
 import { useNavigate } from 'react-router-dom';
+import { Button } from "../../components/Button"
 import { useUser } from '../../hooks/UserContext';
 import {
     Container,
@@ -16,7 +17,6 @@ import {
 import { toast } from 'react-toastify';
 
 import logo from "../../assets/Logo 1.svg"
-import { Button } from "../../components/Button"
 
 
 export function Login() {

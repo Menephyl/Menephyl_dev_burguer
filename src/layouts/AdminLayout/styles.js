@@ -19,5 +19,6 @@ export const Container = styled.div`
         margin: 0 auto;
         padding: 40px 20px;
         max-width: 1200px;
-        width: 100%;            }
+        width: 100%;          
+          }
 `;

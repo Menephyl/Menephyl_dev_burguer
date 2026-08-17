@@ -39,17 +39,14 @@ hr {
 `;
 
 export const HeaderLink = styled(Link)`
-color: ${(props) => (props.$isActive ? '#9758a9' : '#fff')} ;
-border-bottom: ${(props) => (props.$isActive ? '1px solid #9758a9' : 'none')} ;
+color: ${(props) => (props.$isActive ? (props) => props.theme.purple : (props) => props.theme.white)};
+border-bottom:${(props) => (props.$isActive ? `1px solid ${(props) => props.theme.purple}` : 'none')};
 text-decoration: none;
 font-size: 14px;
 transition: color 200ms;
 
 &:hover {
-color: #9758a9;
-
-
- /* color:${(props) => props.theme.purple}; */
+ color:${(props) => props.theme.purple}; 
 }
 `;
 
@@ -57,7 +54,8 @@ export const Options = styled.div`
 display: flex;
 align-items: center;
 justify-content: center;
-gap: 48px;
+gap: 12px;
+font-size:13px;
 `;
 
 export const Profile = styled.div`
@@ -67,31 +65,27 @@ gap: 12px;
 font-size: 14px;
 
 p {
-  /* color: ${(props) => props.theme.white}; */
-  color:#fff;
+  color: ${(props) => props.theme.white}; 
   line-height: 90%;
   font-weight: 300;
 
   span {
     font-weight: 700;
-    /* color: ${(props) => props.theme.purple}; */
-    color: #9758a9;;
+   color: ${(props) => props.theme.purple}; 
   }
 }
 `;
 
 export const Logout = styled.button`
-/* color: ${(props) => props.theme.red}; */
-color:#ff3205;
+color: ${(props) => props.theme.red};
 text-decoration: none;
 font-weight: 700;
 background-color: transparent;
 border: none;
 
 &:hover{
-        /* color: ${(props) => props.theme.white}; */
-        color:#fff;
-    }
+ color: ${(props) => props.theme.white};
+}
 `;
 
 export const LinkContainer = styled.div`

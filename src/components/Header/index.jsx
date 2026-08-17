@@ -1,5 +1,15 @@
 
-import { Container, Navigation, HeaderLink, Options, Profile, LinkContainer, Content, Logout } from "./styles"
+import {
+    Container,
+    Navigation,
+    HeaderLink,
+    Options,
+    Profile,
+    LinkContainer,
+    Content,
+    Logout,
+
+} from "./styles"
 import { useNavigate, useResolvedPath } from "react-router-dom";
 import { UserCircleIcon, ShoppingCartIcon } from '@phosphor-icons/react'
 import { useUser } from "../../hooks/UserContext";
@@ -20,7 +30,9 @@ export function Header() {
             <Content>
                 <Navigation>
                     <div>
-                        <HeaderLink to="/" $isActive={pathname === '/'} >Home</HeaderLink> <hr />
+                        <HeaderLink to="/" $isActive={pathname === '/'} >Home
+                        </HeaderLink>
+                        <hr></hr>
                         <HeaderLink to="/cardapio" $isActive={pathname === '/cardapio'}>Cardápio</HeaderLink>
                     </div>
                 </Navigation>
@@ -34,11 +46,11 @@ export function Header() {
                             <Logout onClick={logoutUser}>Sair</Logout>
                         </div>
                     </Profile>
+                    <LinkContainer>
+                        <ShoppingCartIcon color='#fff' size={24} />
+                        <HeaderLink to="/carrinho">Carrinho</HeaderLink>
+                    </LinkContainer>
                 </Options>
-                <LinkContainer>
-                    <ShoppingCartIcon color='#fff' size={24} />
-                    <HeaderLink to="/carrinho">Carrinho</HeaderLink>
-                </LinkContainer>
             </Content>
         </Container>
     )

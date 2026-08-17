@@ -19,6 +19,9 @@ import {
     Select,
     SubmitButton,
 } from './styles';
+import { ImageIcon } from '@phosphor-icons/react'
+
+
 const schema = yup.object({
     name: yup.string().required('Digite o nome do produto'),
     price: yup
@@ -28,21 +31,19 @@ const schema = yup.object({
         .typeError('Digite o preço do produto'),
     category: yup.object().required('Selecione uma caategoria'),
     offer: yup.boolean(),
-
-
 })
 
 export function EditProduct() {
     const [fileName, setFileName] = useState(null)
-    const [categories, setCategories] = useState('')
+    const [categories, setCategories] = useState('');
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
-    const { state } = useLocation()
+    const { state } = useLocation(); // por algum motvo está retonando não lido. 
 
     const {
         state: { produto },
-    } = useLocation()
+    } = useLocation();
 
     useEffect(() => {
         async function loadCategories() {
@@ -57,7 +58,7 @@ export function EditProduct() {
         register,
         handleSubmit,
         control,
-        formState: { errors }
+        formState: { errors },
     } = useForm({
         resolver: yupResolver(schema),
 
@@ -92,7 +93,7 @@ export function EditProduct() {
                             {...register('name')}
                             defaultValue={produto.name}
                         />
-                        <ErrorMessage>{errors?.name?.message}</ErrorMessage>
+                        <ErrorMessage>{errors.name?.message}</ErrorMessage>
 
                     </InputGroup>
 
@@ -103,12 +104,13 @@ export function EditProduct() {
                             {...register('price')}
                             defaultValue={produto.price / 100}
                         />
-                        <ErrorMessage>{errors?.price?.message}</ErrorMessage>
+                        <ErrorMessage>{errors.price?.message}</ErrorMessage>
                     </InputGroup>
 
                     <InputGroup>
                         <LabelUpload>
-                            <Image />
+                            <ImageIcon />
+
                             <input type="file" {...register('file')}
                                 accept='image/jpeg,image/jpg,image/png'
                                 onChange={(value) => {
@@ -143,9 +145,11 @@ export function EditProduct() {
                         />
                         <ErrorMessage>{errors.category?.message}</ErrorMessage>
                     </InputGroup>
+
                     <InputGroup>
                         <ContainerCheckbox>
-                            <input type="checkbox" {...register('offer')}
+                            <input type="checkbox"
+                                {...register('offer')}
                                 defaultChecked={produto.offer}
                             />
                             <Label>Produto em Oferta ? </Label>

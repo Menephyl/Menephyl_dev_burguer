@@ -20,7 +20,7 @@ button{
     justify-content: center;
     height: 30px;
     width: 30px;
-    color: #fff;
+    color: ${(props) => props.theme.white};
     border-radius:4px;
     background-color:#9758a6;
     transition: background-color 0.3s;

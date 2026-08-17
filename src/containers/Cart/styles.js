@@ -13,13 +13,13 @@ width: 100%;
     
 background-position: center;
 background-size:cover;
-background-color: #1f1f1f;
+
 
 
 `
 export const Banner = styled.div`
 background:url('${Texture}') no-repeat; 
-background-color: #1f1f1f;
+background-color: ${(props) => props.theme.mainBlack} ;
 background-size:cover;
 background-position: center;
 display: flex;
@@ -57,7 +57,7 @@ export const Title = styled.h1`
 font-size: 32px;
 font-weight: 800;
 padding-bottom:12px;
-color:#000000;
+color:${(props) => props.theme.green};;
 text-align: center;
 position: relative;
 

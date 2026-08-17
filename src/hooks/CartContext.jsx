@@ -1,4 +1,9 @@
-import { useContext, createContext, useEffect, useState } from 'react';
+import {
+    useContext,
+    createContext,
+    useEffect,
+    useState
+} from 'react';
 
 
 const CartContext = createContext({})
@@ -19,19 +24,11 @@ export const CartProvider = ({ children }) => {
 
             setCartProducts(newProductsInCart)
         } else {
-            product.quantity = 1
+            product.quantity = 1;
             newProductsInCart = [...cartProducts, product]
             setCartProducts(newProductsInCart)
         }
         updateLocalStorage(newProductsInCart)
-        /* 
-        REGRAS DE NEGÓCIOS
-        produto chegou 
-        se sim 
-            aumenta a quantidade dele 
-        se nao 
-            adiciono ele ao carrinho
-        */
     }
 
     const clearCart = () => {
@@ -41,7 +38,6 @@ export const CartProvider = ({ children }) => {
 
 
     const deleteProduct = (productId) => {
-
         const newCart = cartProducts.filter((prd) => prd.id !== productId)
         setCartProducts(newCart)
         updateLocalStorage(newCart)
@@ -50,7 +46,9 @@ export const CartProvider = ({ children }) => {
 
     const increaseProduct = (productId) => {
         const newCart = cartProducts.map((prd) => {
-            return prd.id === productId ? { ...prd, quantity: prd.quantity + 1 } : prd
+            return prd.id === productId
+                ? { ...prd, quantity: prd.quantity + 1 }
+                : prd
         })
         setCartProducts(newCart)
         updateLocalStorage(newCart)
@@ -103,5 +101,5 @@ export const useCart = () => {
     if (!context) {
         throw new Error("useCart must be used within a CartProvider")
     }
-    return context
+    return context;
 }

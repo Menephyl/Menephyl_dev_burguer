@@ -7,7 +7,7 @@ import BannerHamburger from '../../assets/banner-hamburger.svg';
 export const Container = styled.section`
  width: 100%;
   height: 100%;
- background-color:    #f0f0f0;       // ${(props) => props.theme.secondWhite}; */
+ background-color:  ${(props) => props.theme.secondWhite}; 
 
 
 h1 {
@@ -46,14 +46,14 @@ h1 {
   font-size: 80px;
   line-height: 65px;
   position: absolute;
-  color: #fff; // ${(props) => props.theme.darkWhite};
+  color: ${(props) => props.theme.darkWhite};
 
   right: 20%;
   top: 30%;
 
   span {
     display: block;
-    color: #fff; // ${(props) => props.theme.darkWhite};
+    color: ${(props) => props.theme.darkWhite};
     font-size: 20px;
     }
 }

@@ -8,6 +8,7 @@ display:flex;
 align-items:center;
 justify-content:center;
 flex-direction:column;
+min-height: 100vh;
 
 `
 
@@ -34,6 +35,7 @@ gap: 4px;
 export const Label = styled.label`
 color:${(props) => props.theme.white};
 font-size:14px;
+
 `
 
 export const LabelUpload = styled.label`

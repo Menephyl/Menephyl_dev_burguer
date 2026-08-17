@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
-import { Image } from '@phosphor-icons/react/dist/ssr';
+import { ImageIcon } from '@phosphor-icons/react/dist/ssr';
 import { useEffect, useState } from 'react';
 import { Controller, useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
@@ -18,6 +18,7 @@ import {
     Select,
     SubmitButton,
 } from './styles';
+
 const schema = yup.object({
     name: yup.string().required('Digite o nome do produto'),
     price: yup
@@ -33,12 +34,13 @@ const schema = yup.object({
             return value && value.length > 0;
         })
         .test('fileSize', 'A imagem do produto deve ter menos de 3MB', (value) => {
-            return value && value.length > 0 && value[0].size <= 3000000
+            return value && value.length > 0 && value[0].size <= 3000000;
         })
         .test('type', 'Imagem deve ser tipo png, jpeg, jpg', (value) => {
             return (
                 value &&
-                value.length > 0 && (value[0].type === 'image/png' ||
+                value.length > 0 &&
+                (value[0].type === 'image/png' ||
                     value[0].type === 'image/jpeg' ||
                     value[0].type === 'image/jpg')
             )
@@ -46,7 +48,7 @@ const schema = yup.object({
 })
 
 export function NewProduct() {
-    const [fileName, setFilename] = useState(null);
+    const [fileName, setFileName] = useState(null);
     const [categories, setCategories] = useState('')
 
     const navigate = useNavigate()
@@ -64,7 +66,7 @@ export function NewProduct() {
         register,
         handleSubmit,
         control,
-        formState: { errors }
+        formState: { errors },
     } = useForm({
         resolver: yupResolver(schema),
 
@@ -85,7 +87,7 @@ export function NewProduct() {
             error: 'Erro ao adicionar produto! ❌',
         })
         setTimeout(() => {
-            navigate('/admin/produtos')
+            navigate('/admin/produtos');
         }, 2000)
     }
 
@@ -98,21 +100,19 @@ export function NewProduct() {
                         <Input type="text" {...register('name')} />
                         <ErrorMessage>{errors.name?.message}</ErrorMessage>
                     </InputGroup>
+
                     <InputGroup>
                         <Label>Preço</Label>
                         <Input type="number" {...register('price')} />
                         <ErrorMessage>{errors.price?.message}</ErrorMessage>
                     </InputGroup>
-                    <InputGroup>
-                        <Label>Nome</Label>
-                        <Input type="text" {...register('name')} />
-                        <ErrorMessage>{errors.name?.message}</ErrorMessage>
-                    </InputGroup>
+
                     <InputGroup>
                         <LabelUpload>
-                            <Image />
+                            <ImageIcon />
                             <Input type="file"{...register('file')}
-                                accept="image/png,image/jpeg,image/jpg,image/png" onChange={(value) => {
+                                accept="image/png, image/jpeg, image/jpg"
+                                onChange={(value) => {
                                     setFileName(value.target.files[0]?.name)
                                     register('file').
                                         onChange(value)
@@ -121,25 +121,29 @@ export function NewProduct() {
                             {fileName || 'Upload do Produto'}
 
                         </LabelUpload>
+
                         <ErrorMessage>
                             {errors.file?.message}
                         </ErrorMessage>
-                        <Label>Categoria</Label>
-                        <Controller
-                            name='category'
-                            control={control}
-                            render={({ field }) => (
-                                <Select {
-                                    ...field}
-                                    options={categories}
-                                    getOptionLabel={(categories) => categories.name}
-                                    getOptionValue={(categories) => categories.id}
-                                    placeholder="Selecione uma categoria"
-                                    menuPortalTarget={document.body}
-                                />
-                            )}
-                        />
-                        <ErrorMessage>{errors.category?.message}</ErrorMessage>
+
+                        <InputGroup>
+                            <Label>Categoria</Label>
+                            <Controller
+                                name='category'
+                                control={control}
+                                render={({ field }) => (
+                                    <Select {
+                                        ...field}
+                                        options={categories}
+                                        getOptionLabel={(categories) => categories.name}
+                                        getOptionValue={(categories) => categories.id}
+                                        placeholder="Selecione uma categoria"
+                                        menuPortalTarget={document.body}
+                                    />
+                                )}
+                            />
+                            <ErrorMessage>{errors.category?.message}</ErrorMessage>
+                        </InputGroup>
                     </InputGroup>
                     <InputGroup>
                         <ContainerCheckbox>
