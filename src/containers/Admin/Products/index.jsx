@@ -5,12 +5,12 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { CheckCircle, Pencil, XCircle } from '@phosphor-icons/react';
+import { CheckCircle, PencilIcon, XCircle } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../../services/api';
 import { formatPrice } from '../../../utils/formatPrice';
-import { Container, EditButton, ProductImage } from './styles';
+import { Container, EditButton, ProductImage } from './styles.js';
 
 
 export function Products() {
@@ -69,11 +69,9 @@ export function Products() {
                                 </TableCell>
                                 <TableCell align="center">
                                     <EditButton onClick={() => editProduct(products)}>
-                                        <Pencil />
+                                        <PencilIcon />
                                     </EditButton>
                                 </TableCell>
-
-
                             </TableRow>
                         ))}
                     </TableBody>

@@ -17,7 +17,7 @@ import {
     LabelUpload,
     Select,
     SubmitButton,
-} from './styles';
+} from './styles.js';
 
 const schema = yup.object({
     name: yup.string().required('Digite o nome do produto'),

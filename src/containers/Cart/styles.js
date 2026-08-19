@@ -13,9 +13,6 @@ width: 100%;
     
 background-position: center;
 background-size:cover;
-
-
-
 `
 export const Banner = styled.div`
 background:url('${Texture}') no-repeat; 

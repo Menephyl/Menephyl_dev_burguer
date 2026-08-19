@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
-import { Container } from "./styles";
 import { formatPrice } from "../../utils/formatPrice";
 import { useCart } from "../../hooks/CartContext";
 import { Button } from "../../components/Button";
 import { toast } from "react-toastify";
+import { Container } from '../../../styles.js';
 
 export function CartResume() {
     const [finalPrice, setFinalPrice] = useState(0)

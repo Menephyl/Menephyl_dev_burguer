@@ -1,5 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Image } from '@phosphor-icons/react/dist/ssr'
+import { ImageIcon } from '@phosphor-icons/react/dist/ssr'
 import { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useLocation, useNavigate } from 'react-router-dom'
