@@ -33,14 +33,17 @@ export function CartResume() {
             }
         })
         try {
-            const response = await api.post('/create-payment-intent', {
+            const { data } = await api.post('/create-payment-intent', {
                 products,
 
             })
-            console.log(response)
+            navigate('checkout', {
+                state: data,
+            })
+
         } catch (err) {
             console.log(err)
-            toast.error('Houve um erro ao finalizar o pedido. Tente novamente!', {
+            toast.error('😭😥 Houve um erro ao finalizar o pedido. Tente novamente!', {
                 position: 'top-right',
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -51,34 +54,6 @@ export function CartResume() {
                 theme: 'dark',
             })
         }
-
-        /*try {
-            const { status } = await api.post('orders', { products },
-                {
-                    validateStatus: () => true,
-                },
-            );
-
-            if (status === 200 || status === 201) {
-                setTimeout(() => {
-                    navigate('/')
-                }, 2000)
-                toast.success('Pedido feito! Obrigado!!')
-                setTimeout(() => {
-                    toast.success('Jajá vem a confirmação do restaurante! ')
-                }, 1500)
-                clearCart()
-
-            } else if (status === 409) {
-                toast.error("Ih, deu ruim!Tente pedir novamente!")
-            } else {
-                throw new Error();
-            }
-
-        } catch (error) {
-            toast.error('😭😥 Falha no sistema! Tente novamete mais tarde ou liga pra nois! (35) 9 9213-4176!')
-        }
-        */
     }
     return (
         <div>

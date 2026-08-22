@@ -2,7 +2,7 @@ import {
     useContext,
     createContext,
     useEffect,
-    useState
+    useState,
 } from 'react';
 
 
@@ -87,7 +87,7 @@ export const CartProvider = ({ children }) => {
             clearCart,
             deleteProduct,
             increaseProduct,
-            decreaseProduct
+            decreaseProduct,
         }}
         >
             {children}

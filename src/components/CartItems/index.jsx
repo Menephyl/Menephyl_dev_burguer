@@ -38,7 +38,7 @@ export function CartItems() {
                         </Table.Td>
 
                         <Table.Td>  {/*se der null colocar currency.value*/}
-                            {product.currency}
+                            {product.currencyValue}
                         </Table.Td>
 
                         <Table.Td>

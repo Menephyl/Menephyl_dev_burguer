@@ -1,4 +1,4 @@
-import { SignOut } from '@phosphor-icons/react';
+import { SignOutIcon } from '@phosphor-icons/react';
 import { useResolvedPath } from 'react-router-dom';
 import Logo from '../../assets/Logo.svg';
 import { useUser } from '../../hooks/UserContext.jsx';
@@ -26,7 +26,7 @@ export function SideNavAdmin() {
       </NavLinkContainer>
       <Footer>
         <NavLink to="/login" onClick={logout}>
-          <SignOut />
+          <SignOutIcon />
           <p>Sair</p>
         </NavLink>
       </Footer>

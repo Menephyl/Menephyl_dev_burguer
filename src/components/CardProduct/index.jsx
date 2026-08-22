@@ -17,9 +17,7 @@ export function CardProduct({ product }) {
                     {product.currencyValue}
                 </strong>
             </div>
-            <CartButton onClick={() => putProductInCart(product)}>
-
-            </CartButton>
+            <CartButton onClick={() => putProductInCart(product)}></CartButton>
 
         </Container>
     )
