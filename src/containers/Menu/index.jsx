@@ -2,9 +2,15 @@ import { useEffect, useState } from 'react'
 
 import { api } from "../../services/api"
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import { CardProduct } from '../../components'
+import { CardProduct } from '../../components/CardProduct'
 import { formatPrice } from '../../utils/formatPrice'
-import { Container, Banner, ProductsContainer, CategoryMenu, CategoryButton, } from './styles'
+import {
+    Container,
+    Banner,
+    ProductsContainer,
+    CategoryMenu,
+    CategoryButton,
+} from './styles'
 
 
 export function Menu() {
