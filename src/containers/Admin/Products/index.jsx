@@ -5,7 +5,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { CheckCircle, PencilIcon, XCircle } from '@phosphor-icons/react';
+import { CheckCircleIcon, PencilIcon, XCircleIcon } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { api } from '../../../services/api';
@@ -27,9 +27,9 @@ export function Products() {
 
     function isOffer(offer) {
         if (offer) {
-            return <CheckCircle color="#61a120" size="28px" />
+            return <CheckCircleIcon color="#61a120" size="28px" />
         } else {
-            return <XCircle color="#ff3205" size="28px" />
+            return <XCircleIcon color="#ff3205" size="28px" />
         }
     }
 

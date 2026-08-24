@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { api } from "../../services/api.js";
 import { Container, Title } from './styles.js'
-import { CardProduct } from '../CardProduct/index.jsx';
+import { CardProduct } from '../../components';
 import { formatPrice } from '../../utils/formatPrice.js';
 
 export function OffersCarousel() {

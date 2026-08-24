@@ -1,22 +1,23 @@
 
+import Select from 'react-select'
 import styled from 'styled-components';
 
 export const ProductImage = styled.img`
-    height:80px;
-    padding: 12px;
+    height: 5rem;
+    padding: 0.6rem;
     border-radius: 50%;
 `;
 
 export const SelectStatus = styled(Select)`
-    width: 240px;
+    width: 15rem;
     margin: 0 auto;
 `;
 export const Filter = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 28px 0;
-    gap: 50px;
+    margin: 1.8rem 0;
+    gap: 3rem;
 `;
 
 export const FilterOption = styled.button`
@@ -25,8 +26,8 @@ export const FilterOption = styled.button`
     border: none;
     color: ${(props) => (props.$isActiveStatus ? props.theme.purple : props.theme.darkGray)};
     border-bottom: ${(props) => (props.$isActiveStatus ? `2px solid ${props.theme.purple}` : 'none')};
-    font-size: 18px;
-    line-height: 20px;
-    padding-bottom: 5px;
+    font-size: 1.1rem;
+    line-height: 1.1rem;
+    padding-bottom: 0.3rem;
 `;
 

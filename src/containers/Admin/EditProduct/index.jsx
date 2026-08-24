@@ -67,7 +67,7 @@ export function EditProduct() {
         const newFormData = new FormData()
 
         newFormData.append('name', data.name);
-        newFormData.append('price', data.price);
+        newFormData.append('price', data.price *100);
         newFormData.append('category_id', data.category.id)
         newFormData.append('file', data.file[0])
         newFormData.append('offer', data.offer)

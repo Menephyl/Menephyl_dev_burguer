@@ -5,17 +5,17 @@ export const Container = styled.div`
 `;
 
 export const ProductImage = styled.img`
-    height: 80px;
-    padding: 12px;
-    border-radius: 16px;
+    height: 5rem;
+    padding: 0.6rem;
+    border-radius: 50%;
     background-color: ${(props) => props.theme.darkWhite};
 `;
 
 export const EditButton = styled.button`
     background-color: ${(props) => props.theme.darkWhite};
-    height: 32px;
-    width: 32px;
-    border-radius: 8px;
+    height: 2rem                ;
+    width: 2rem;
+    border-radius: 0.4rem;
     border: none;
     margin: 0 auto;
 
@@ -24,8 +24,8 @@ export const EditButton = styled.button`
     justify-content: center;
 
     svg{
-        font-size: 18px;
-        width: 18px;
+        font-size: 1.2rem;
+        width: 1.2rem;
     }
 
     &:hover {

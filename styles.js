@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     background-color: ${(props) => props.theme.white};
-    border-radius: 20px;
+    border-radius: 1.25rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -23,40 +23,40 @@ export const Container = styled.div`
 
         .title{
             grid-area: title;
-            font-size: 20px;
+            font-size: 1.25rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem;
             background-color: ${(props) => props.theme.secondBlack};
             color: ${(props) => props.theme.white};
-            padding: 15px;
+            padding: 1rem;
             text-align: center;
-            border-radius: 20px 20px 0 0;
+            border-radius: 1.25rem 1.25rem 0 0;
         }
         .items{
             grid-area: items;
-            padding-left: 20px;
+            padding-left: 1.25rem;
         }
         .items-price{
             grid-area: items-price;
-            padding-right: 20px;
+            padding-right: 1.25rem;
         }
         .delivery-tax{
             grid-area: delivery-tax;
-            padding-left: 20px;
+            padding-left: 1.25rem;
         }
         .delivery-tax-price{
             grid-area: delivery-tax-price;
-            padding-right: 20px;
+            padding-right: 1.25rem;
         }
     }
 
     .container-bottom{
         display: flex;
         justify-content: space-between;
-        font-size: 20px;
+        font-size: 1.25rem;
         font-weight: 700;
-        margin-top: 24px;
-        padding:20px;
+        margin-top: 1.5rem;
+        padding:1.25rem;
 
         *{
         font-weight: 700;

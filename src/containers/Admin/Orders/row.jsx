@@ -29,7 +29,6 @@ export function Row({ row, setOrders, orders }) {
 
             const newOrders = orders.map((order) =>
                 order._id === id ? { ...order, status } : order,
-
             );
             setOrders(newOrders);
         } catch (error) {
@@ -84,13 +83,16 @@ export function Row({ row, setOrders, orders }) {
                             <Typography variant="h6" gutterBottom component="div">
                                 Pedido
                             </Typography>
+
                             <Table size="small" aria-label="purchases">
                                 <TableHead>
                                     <TableRow>
                                         <TableCell>Quantidade</TableCell>
                                         <TableCell>Produto</TableCell>
                                         <TableCell> Categoria</TableCell>
-                                        <TableCell>Imagem do Produto</TableCell>
+                                        <TableCell>Imagem do Produto
+
+                                        </TableCell>
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>

@@ -8,7 +8,7 @@ width: 100%;
     rgba(255,255,255,0.5),
     rgba(255,255,255,0.5)  
     ),
-     url('${Background}');
+     url('${Background}');              
     min-height: 100vh;
     
 background-position: center;
@@ -23,37 +23,22 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
-height: 180px;
+height: 11.25rem;
 
 position: relative;
 
-/* background-color: ${(props) => props.theme.secondWhite}; */
 img{
-height: 130px;
+height: 8.125rem;
 }
 
-/* h1 {
-  font-family: 'Road Rage', sans-serif;
-  font-size: 80px;
-  line-height: 65px;
-  position: absolute;
-  color: #fff; // ${(props) => props.theme.darkWhite};
-  right: 20%;
-  top: 30%;
 
-  span {
-    display: block;
-    color: #fff; // ${(props) => props.theme.darkWhite};
-    font-size: 20px;
-     }
-} */
 
 `
 
 export const Title = styled.h1`
-font-size: 32px;
+font-size: 2rem;
 font-weight: 800;
-padding-bottom:12px;
+padding-bottom:0.75rem;
 color:${(props) => props.theme.green};;
 text-align: center;
 position: relative;
@@ -64,8 +49,8 @@ position: relative;
     left: calc(50% - 28px);
     bottom: 0;
     content: '';
-    width: 56px;
-    height: 5px;
+    width: 3.5rem;
+    height: 0.3125rem;
     background-color: #000000;
 }
 `
@@ -73,9 +58,9 @@ export const Content = styled.div`
 display:grid;
 grid-template-columns: 1fr 30%;
 width: 100%;
-gap: 40px;
-max-width: 1280px;
-padding: 40px;
+gap: 1.5rem;
+max-width: 50rem;
+padding: 2.5rem;
 margin: 0 auto;
 
 `

@@ -11,7 +11,7 @@ export const Container = styled.div`
 
     img{
         width: 60%;
-        margin: 40px 0;
+        margin: 2.5rem 0;
     }
 `;
 
@@ -25,12 +25,12 @@ export const NavLinkContainer = styled.div`
 export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
-    gap: 12px;
-    padding: 12px 20px;
+    gap: 0.8rem;
+    padding: 0.8rem 1.4rem;
     text-decoration: none;
     color:${(props) => props.theme.white} ;
     background-color: ${(props) =>
-      props.$isActive ? props.theme.purple : 'transparent'};
+        props.$isActive ? props.theme.purple : 'transparent'};
 
     &:hover{
         background-color: ${(props) => props.theme.purple};

@@ -5,8 +5,8 @@ export const Container = styled.div`
 background-color:#1f1f1f;
 background-color: ${(props) => props.theme.mainBlack}; 
 width: 100%;
-height: 72px;
-padding: 0 56px;
+height: 4.5rem;
+padding: 0 3.5rem;
 `;
 
 export const Content = styled.div`
@@ -15,7 +15,7 @@ align-items: center;
 justify-content: space-between;
 
 width: 100%;
-max-width: 1280px;
+max-width: 80rem;
 margin: 0 auto;
 `;
 
@@ -23,18 +23,18 @@ export const Navigation = styled.nav`
 display: flex;
 align-items: center;
 justify-content: center;
-height: 72px;
+height: 4.5rem;
 
 div {
  display: flex;
  justify-content: center;
  align-items: center;
- gap: 20px;
+ gap: 1.25rem;
 }
 
 hr {
-  height: 24px;
-  border: 1px solid ${(props) => props.theme.darkGray}; 
+  height: 1.5rem;
+  border: 0.15rem solid ${(props) => props.theme.darkGray}; 
  }
 `;
 
@@ -42,7 +42,7 @@ export const HeaderLink = styled(Link)`
 color: ${(props) => (props.$isActive ? (props) => props.theme.purple : (props) => props.theme.white)};
 border-bottom:${(props) => (props.$isActive ? `1px solid ${(props) => props.theme.purple}` : 'none')};
 text-decoration: none;
-font-size: 14px;
+font-size: 0.8rem;
 transition: color 200ms;
 
 &:hover {
@@ -61,8 +61,8 @@ font-size:13px;
 export const Profile = styled.div`
 display: flex;
 align-items: center;
-gap: 12px;
-font-size: 14px;
+gap: 0.8rem;
+font-size: 0.8rem;
 
 p {
   color: ${(props) => props.theme.white}; 
@@ -91,5 +91,5 @@ border: none;
 export const LinkContainer = styled.div`
 display: flex;
 align-items: center;
-gap: 10px;
+gap: 0.16rem;
 `;

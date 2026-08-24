@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export const Container = styled.div`
 
 .carousel-item{
-    padding-right:40px;
+    padding-right:2.40rem;
     
 }
 overflow-x:hidden;
@@ -13,18 +13,18 @@ overflow-x:hidden;
 }
 
 .react-multiple-carousel__arrow--left {
-    left: 15px;
-    top: 10px;
+    left: 1rem;
+    top: 0.1rem;
 }
 
 .react-multiple-carousel__arrow--right {
-    top: 10px;
+    top: 0.1rem;
 }
 
 
 
-padding-left:40px;
-padding-bottom: 40px;
+padding-left:2.40rem;
+padding-bottom: 2.5rem;
 
 `
 
@@ -35,16 +35,16 @@ color:${(props) => props.theme.green};
 padding-bottom: 1rem;
 position: relative;
 text-align: center;
-margin:50px 0;
+margin:3.4rem 0;
 
 
 &::after {
     content: '';
     position: absolute;
   bottom: 10px;
-  width: 56px;
-  height: 4px;
-  left: calc(50% - 28px);
+  width: 3.6rem;
+  height: 0.26rem;
+  left: calc(50% - 1.7rem);
     background-color: ${(props) => props.theme.green};
 
 }

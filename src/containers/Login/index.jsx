@@ -5,6 +5,7 @@ import { api } from "../../services/api"
 import { useNavigate } from 'react-router-dom';
 import { Button } from "../../components/Button"
 import { useUser } from '../../hooks/UserContext';
+import { toast } from 'react-toastify';
 import {
     Container,
     LeftContainer,
@@ -14,7 +15,6 @@ import {
     InputContainer,
     Link
 } from "./styles"
-import { toast } from 'react-toastify';
 
 import logo from "../../assets/Logo 1.svg"
 

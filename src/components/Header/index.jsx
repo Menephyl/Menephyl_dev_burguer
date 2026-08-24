@@ -46,6 +46,7 @@ export function Header() {
                             <Logout onClick={logoutUser}>Sair</Logout>
                         </div>
                     </Profile>
+
                     <LinkContainer>
                         <ShoppingCartIcon color='#fff' size={24} />
                         <HeaderLink to="/carrinho">Carrinho</HeaderLink>

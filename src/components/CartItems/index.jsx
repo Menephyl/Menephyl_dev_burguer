@@ -1,7 +1,7 @@
 import TrashIcon from "../../assets/trash.svg"
 import { useCart } from "../../hooks/CartContext"
-import { Table } from "../index"
 import { formatPrice } from '../../utils/formatPrice'
+import { Table } from "../index"
 import {
     ButtonGroup,
     EmptyCart,
@@ -9,9 +9,6 @@ import {
     ProductTotalPrice,   // TotalPrice is deprecated. 
     TrashImage,
 } from "./styles"
-
-
-
 export function CartItems() {
     const { cartProducts, decreaseProduct, increaseProduct, deleteProduct } = useCart()
     return (
@@ -60,7 +57,7 @@ export function CartItems() {
                         </Table.Td>
 
                         <Table.Td>
-                            <TrashImage src={TrashIcon} alt="icone lixeira" onClick={() => deleteProduct(product.id)}
+                            <TrashImage src={TrashIcon} alt="deletar pedido" onClick={() => deleteProduct(product.id)}
                             />
                         </Table.Td>
                     </Table.Tr>
@@ -70,7 +67,7 @@ export function CartItems() {
 
                         <Table.Td>
                             Carrinho Vazio
-                            <span style={{ fontSize: '10px' }}>
+                            <span style={{ fontSize: '0.625rem' }}>
                                 <br />Volte para o cardápio <br /> Aguarde a confirmação do pedido<br />Se acabou de fazer! Obrigado!.
                             </span>
                         </Table.Td>

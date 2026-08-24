@@ -1,7 +1,7 @@
 import PropTypes from "prop-types"
-import { Container, CardImage } from "./styles"
 import { CartButton } from "../../components"
 import { useCart } from "../../hooks/CartContext"
+import { Container, CardImage } from "./styles"
 
 
 
@@ -22,8 +22,6 @@ export function CardProduct({ product }) {
         </Container>
     )
 }
-
-
 CardProduct.propTypes = {
     product: PropTypes.object,
 }

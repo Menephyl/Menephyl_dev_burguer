@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { api } from "../../services/api";
+import { toast } from "react-toastify";
 import { formatPrice } from "../../utils/formatPrice";
 import { useCart } from "../../hooks/CartContext";
-import { Button } from "../../components/Button";
-import { toast } from "react-toastify";
+import { Button } from "../../components";
 import { Container } from '../../../styles.js';
 
 export function CartResume() {
@@ -14,11 +14,11 @@ export function CartResume() {
 
     const navigate = useNavigate();
 
-    const { cartProducts, clearCart } = useCart()
-    ''
+    const { cartProducts, clearCart } = useCart() // limparcarrinho ligado onde no cart?
+
     useEffect(() => {
-        const sumAllItems = cartProducts.reduce((acc, currency) => {
-            return currency.price * currency.quantity + acc
+        const sumAllItems = cartProducts.reduce((acc, currencyValue) => {
+            return currencyValue.price * currencyValue.quantity + acc
         }, 0)
         setFinalPrice(sumAllItems)
     }, [cartProducts])
@@ -34,8 +34,7 @@ export function CartResume() {
         })
         try {
             const { data } = await api.post('/create-payment-intent', {
-                products,
-
+                products
             })
             navigate('checkout', {
                 state: data,
