@@ -44,7 +44,14 @@ export function Login() {
             api.post('/sessions', {
                 email: data.email,
                 password: data.password,
-            }),
+            }
+                /** {
+                  validateStatus: () => true,
+                }, */
+
+
+
+            ),
             {
                 pending: 'Verificando dados...',
 
@@ -61,8 +68,6 @@ export function Login() {
                         return 'Seja Bem Vindo(a) !👌'
                     }
                 },
-
-
                 error: 'Email ou senha incorreto(a) 🤯',
             },
         );
