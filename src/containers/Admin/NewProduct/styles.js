@@ -77,15 +77,15 @@ line-height: 80%;
 font-weight: 600;
 
 `
-export const ContainerCheckox = styled.div`
+export const ContainerCheckbox = styled.div`
 display:flex;
 gap:0.75rem;
 cursor:pointer;
 margin-top:0.5rem;
-
+label{
+    cursor:pointer;
+}
 input{
     cursor:pointer;
 }
-
-
 `

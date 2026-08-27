@@ -43,7 +43,7 @@ export function Menu() {
         }
         async function loadProducts() {
             const { data } = await api.get('/products')
-
+            ///const newProducts = data.map((product)
             const newProducts = data.products.map((product) => ({
                 currencyValue: formatPrice(product.price),
                 ...product,
