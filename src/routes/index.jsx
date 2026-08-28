@@ -7,16 +7,14 @@ import {
     Home,
     Login,
     Menu,
-    Admin,
     Orders,
     Register,
+    Admin,
+    EditProduct,
+    NewProduct,
+    Products,
 } from '../containers';
 import { AdminLayout } from '../layouts/AdminLayout';
-
-import { EditProduct } from '../containers/Admin/EditProduct/index';
-import { NewProduct } from '../containers/Admin/NewProduct';
-import { Products } from '../containers/Admin/Products';
-
 
 import { UserLayout } from '../layouts/UserLayout';
 

@@ -12,7 +12,7 @@ min-height: 100vh;
 
 `
 
-export const From = styled.form`
+export const Form = styled.form`
 border-radius:1.5rem;
 background-color:${(props) => props.theme.black};
 padding:2rem;

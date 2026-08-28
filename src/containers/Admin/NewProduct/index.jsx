@@ -6,18 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
 import { api } from '../../../services/api';
-import {
-    Container,
-    ContainerCheckbox,
-    ErrorMessage,
-    Form,
-    Input,
-    InputGroup,
-    Label,
-    LabelUpload,
-    Select,
-    SubmitButton,
-} from './styles.js';
+import { Container, ErrorMessage, Form, InputGroup, Label } from './styles.js';
+import Input from '@mui/material/Input';
 
 const schema = yup.object({
     name: yup.string().required('Digite o nome do produto'),
