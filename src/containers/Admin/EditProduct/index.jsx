@@ -3,8 +3,8 @@ import { ImageIcon } from '@phosphor-icons/react/dist/ssr'
 import { useEffect, useState } from 'react'
 import { Controller, useForm } from 'react-hook-form'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { api } from '../../../services/api'
 import { toast } from 'react-toastify'
+import { api } from '../../../services/api'
 
 
 import {
@@ -19,7 +19,7 @@ import {
     Select,
     SubmitButton,
 } from './styles';
-import { ImageIcon } from '@phosphor-icons/react'
+
 
 
 const schema = yup.object({
@@ -35,15 +35,21 @@ const schema = yup.object({
 
 export function EditProduct() {
     const [fileName, setFileName] = useState(null)
+
     const [categories, setCategories] = useState('');
 
     const navigate = useNavigate();
 
     const { state } = useLocation(); // por algum motvo está retonando não lido. 
 
-    const {
-        state: { produto },
-    } = useLocation();
+    const { produto } = state || {};  // desestruturação de state nao deu certo, tem algo em algum ponto que preciso verificar tudo. 
+    // O export está correto (export function EditProduct).
+
+    //O erro que você viu não é mais de exportação, mas sim da desestruturação duplicada do useLocation.
+
+    //Corrija para usar apenas uma vez o useLocation e extrair produto de state.
+
+    //muito estranho 
 
     useEffect(() => {
         async function loadCategories() {
@@ -67,7 +73,7 @@ export function EditProduct() {
         const newFormData = new FormData()
 
         newFormData.append('name', data.name);
-        newFormData.append('price', data.price *100);
+        newFormData.append('price', data.price * 100);
         newFormData.append('category_id', data.category.id)
         newFormData.append('file', data.file[0])
         newFormData.append('offer', data.offer)
