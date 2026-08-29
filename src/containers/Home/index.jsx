@@ -1,4 +1,5 @@
-import { OffersCarousel, CategoriesCarousel } from "../../components";
+import { OffersCarousel } from "../../components";
+import { CategoriesCarousel } from "../../components";
 import { Banner, Container } from "./styles";
 
 export function Home() {
@@ -8,7 +9,7 @@ export function Home() {
             <Banner>
                 <h1>Seja <br />
                     bem vindo(a)!</h1>
-            </Banner>
+            </Banner>z
             <Container>
                 <div>
 

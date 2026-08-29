@@ -3,7 +3,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { useNavigate } from 'react-router-dom';
 import { api } from "../../services/api";
-import { CategoryButton, Container, ContainerItems, Title } from './styles'
+import { Container, ContainerItems, Title, CategoryButton } from './styles'
 
 export function CategoriesCarousel() {
     const [categories, setCategories] = useState([]);

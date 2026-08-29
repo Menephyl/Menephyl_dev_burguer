@@ -19,8 +19,7 @@ export const Container = styled.div`
 /* padding-left:1.875rem; */
 cursor: grab;   
 
-
-`
+`;
 
 export const Title = styled.h2`
 font-size: 1.875rem;
@@ -43,7 +42,7 @@ margin-top:2.5rem;
 
 `
 export const ContainerItems = styled.div`
-background:url('${props => props.imageUrl}') no-repeat;
+background: url(${props => props.imageUrl}) no-repeat;
 background-position:center;
 background-size: cover;
 display: flex;
