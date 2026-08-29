@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -53,18 +53,18 @@ padding: 20px 10px;
 height: 250px;
 border-radius: 20px;
 
-p{
+/* p{
     /* color: #ffffff;
     font-size: 22.5px;
     font-weight: bold;
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 30px;
     padding: 10px 30px;
-    margin-top: 50px; */
+    margin-top: 50px; 
 }
+*/
 `
-export const CategoryButton = styled(Link)`
-
+export const CategoryButton = styled.button`
  color: #fff;
     background-color: rgba(0,0,0,0.5);
     padding: 10px 30px;
