@@ -7,7 +7,7 @@ import {
     Container,
     ContainerItems,
     Title,
-    CategoryButton,
+    CategoryButton
 } from './styles'
 
 export function CategoriesCarousel() {
@@ -52,10 +52,19 @@ export function CategoriesCarousel() {
         },
 
     }
+    // Coloque isso antes do return (dentro do componente CategoriesCarousel)
+    console.log("Debug Componentes:", {
+        Carousel,
+        Container,
+        Title,
+        ContainerItems,
+        CategoryButton
+    });
+
     return (
         <Container>
             <Title>Categorias</Title>
-            <Carousel
+            <Carousel.default
                 responsive={responsive}
                 infinite={true}
                 partialVisible={false}
@@ -80,7 +89,7 @@ export function CategoriesCarousel() {
 
                     </ContainerItems>
                 ))}
-            </Carousel>
+            </Carousel.default>
         </Container >
     )
 }

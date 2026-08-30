@@ -56,7 +56,7 @@ export function OffersCarousel() {
         <Container>
             <Title>Ofertas do Dia</Title>
 
-            <Carousel
+            <Carousel.default
                 responsive={responsive}
                 infinite={true}
                 partialVisible={false}
@@ -69,7 +69,7 @@ export function OffersCarousel() {
                     <CardProduct key={product.id} product={product} />
                 ))}
 
-            </Carousel>
+            </Carousel.default>
         </Container>
     )
 }
