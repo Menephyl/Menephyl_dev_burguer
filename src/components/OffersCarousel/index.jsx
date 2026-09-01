@@ -60,10 +60,10 @@ export function OffersCarousel() {
                 responsive={responsive}
                 infinite={true}
                 partialVisible={false}
-                autoPlay={false}
-            // autoPlaySpeed={2000}
-            // keyBoardControl={true}
-            // itemClass='carousel-item'
+                autoPlay={true}
+                // autoPlaySpeed={2000}
+                // keyBoardControl={true}
+                itemClass='carousel-item'
             >
                 {offers.map(product => (
                     <CardProduct key={product.id} product={product} />

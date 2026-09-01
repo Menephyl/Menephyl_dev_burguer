@@ -145,3 +145,5 @@ export function Register() {
         </Container>
     )
 }
+
+// fazer uma parte  de adicionar informaçõess do admin

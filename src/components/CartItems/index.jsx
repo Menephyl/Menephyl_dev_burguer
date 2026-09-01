@@ -64,12 +64,26 @@ export function CartItems() {
                 ))
                 ) : (
                     <EmptyCart>
+                        {/*  O erro de hidration é sobre o colocar p em tabelas. vai precisar mexer um pouco na estrutura e nao quebra o codigo, mas em questão de SEO depois vai precisar mexer.  
 
+A hierarquia obrigatória de uma tabela é:
+
+<table> (a tabela em si)
+<tbody> (o corpo da tabela)
+<tr> (table row - a linha da tabela)
+<td> ou <th> (table data - as células daquela linha)
+
+Vá até o arquivo do componente CartItems (provavelmente src/components/CartItems/index.jsx).
+Encontre a parte do código onde você constrói a <table> do carrinho.
+Procure onde você está usando uma tag <p> ou um styled component feito de um parágrafo (ex: styled.p) no meio da tabela.
+Troque esse <p> pela tag correta de linha de tabela, que é a <tr> (ou styled.tr no caso do styled-components). A estrutura tem que ficar: <tbody> -> <tr> -> <td>.
+*/}
                         <Table.Td>
                             Carrinho Vazio
                             <span style={{ fontSize: '0.625rem' }}>
                                 <br />Volte para o cardápio <br /> Aguarde a confirmação do pedido<br />Se acabou de fazer! Obrigado!.
                             </span>
+                            {/** quero adicionar um botao para voltar para o inicio */}
                         </Table.Td>
                     </EmptyCart>
                 )}

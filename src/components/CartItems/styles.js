@@ -9,6 +9,7 @@ border-radius: 1rem;
 
 
 export const ButtonGroup = styled.div`
+
 display:flex;
 align-items:center;
 gap:0.75rem;

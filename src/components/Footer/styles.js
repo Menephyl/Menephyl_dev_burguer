@@ -13,5 +13,9 @@ p {
     font-size: 0.9rem;
     font-weight: lighter;
 }
-`;
-1
+a{
+    font-weight: bold;
+    color: ${(props) => props.theme.white};
+    
+}
+`;  

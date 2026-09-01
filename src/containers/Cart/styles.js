@@ -39,7 +39,7 @@ export const Title = styled.h1`
 font-size: 2rem;
 font-weight: 800;
 padding-bottom:0.75rem;
-color:${(props) => props.theme.green};;
+color:${(props) => props.theme.green};
 text-align: center;
 position: relative;
 
@@ -51,10 +51,11 @@ position: relative;
     content: '';
     width: 3.5rem;
     height: 0.3125rem;
-    background-color: #000000;
+    background-color: ${(props) => props.theme.green};
 }
 `
 export const Content = styled.div`
+
 display:grid;
 grid-template-columns: 1fr 30%;
 width: 100%;

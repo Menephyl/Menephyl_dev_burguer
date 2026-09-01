@@ -25,8 +25,8 @@ export function Router() {
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/cardapio" element={<Menu />}></Route>  {/*ok por que estava  com C maiusculo?*/}
                 <Route path="/carrinho" element={<Cart />}></Route>   {/*ok*/}
-                <Route path="/checkout" element={<Checkout />}></Route> {/*ok*/}
-                <Route path="/complete" element={<CompletePayment />}></Route> {/*ok*/}
+                <Route path="/carrinho/checkout" element={<Checkout />}></Route> {/*ok*/}
+                <Route path="/carrinho/complete" element={<CompletePayment />}></Route> {/*ok*/}
             </Route>
 
 

@@ -2,7 +2,7 @@ import axios from "axios"
 
 
 export const api = axios.create({
-    baseURL: "http://localhost:3001"  // impor.env.VITE_BASE_URL,
+    baseURL: "http://127.0.0.1:3001" || "http://localhost:3001"  // impor.env.VITE_BASE_URL,
 })
 
 

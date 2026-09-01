@@ -93,7 +93,7 @@ export function CheckoutForm() {
                 `/complete?payment_intent_client_secret=${paymentIntent.client_secret}`,
             )
         }
-
+        // http://localhost:5173/complete?payment_intent_client_secret=pi_3UAlw5ItBCwINlFH4tyxDDXN_secret_LpAd63ptwGiiJbmkbC4D9N6Mc
         setIsLoading(false)
     }
 

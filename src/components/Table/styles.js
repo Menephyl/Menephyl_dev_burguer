@@ -19,7 +19,7 @@ export const Tr = styled.tr`
 export const Th = styled.th`
 padding: 16px;
 text-align: left;
-background-color: ${(props) => props.theme.lightGray};
+background-color: ${(props) => props.theme.secondBlack};
 color: ${(props) => props.theme.white};
 
 
