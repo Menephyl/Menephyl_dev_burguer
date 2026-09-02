@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { Link } from 'react-router-dom'
 export const Container = styled.div`
 
+
 .carousel-item{
     padding-right:2.40rem;
      
@@ -28,7 +29,6 @@ overflow-x:hidden;
 
 padding-left:2.40rem;
 padding-bottom: 2.5rem;
-
 
 `
 

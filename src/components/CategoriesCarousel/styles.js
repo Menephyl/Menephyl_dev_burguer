@@ -3,23 +3,29 @@ import styled from "styled-components";
 
 export const Container = styled.div`
 .carousel-item{
-    padding-right: 2.5rem;
-    
+    padding-right:2.40rem;
+}
+
+
+overflow-x:hidden;
+
+.react-multi-carousel-list{
+   overflow: visible;
 }
 
 .react-multiple-carousel__arrow--left {
-    left: 15px;
-    
+    left: 1rem;
+    top: 0.1rem;
 }
 
 .react-multiple-carousel__arrow--right {
-    top: 10px;
-    
+    top: 0.1rem;
 }
-/* padding-left:1.875rem; */
-cursor: grab;   
 
-`;
+padding-left:2.40rem;
+padding-bottom: 2.5rem;
+
+`
 
 export const Title = styled.h2`
 font-size: 1.875rem;
