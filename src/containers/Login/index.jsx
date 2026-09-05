@@ -56,9 +56,9 @@ export function Login() {
                 pending: 'Verificando dados...',
 
                 success: {
-                    render() {
+                    render({ data }) {
                         setTimeout(() => {
-                            if (userData?.admin) {
+                            if (data.data.admin) {
                                 navigate('/admin/pedidos')
                             } else {
 

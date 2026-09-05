@@ -43,13 +43,15 @@ p{
     color: #fff;
     font-size: 1.125rem;
     font-weight: 800;
-}
 
 a {
     color: #fff;
     text-decoration: underline;
     padding: 0.3rem;
 }
+
+}
+
 
 
 `
@@ -87,25 +89,18 @@ input{
     padding: 0 1rem;
 }
 label{
+    font-family: 'Poppins', sans-serif; 
     font-size: 1.125rem;
     font-weight: 600;
-    color: #fff;
+    color: #fff;    
 }
 p{
     color:#cf3057;
     font-size: 0.875rem;
     line-height: 80%;
    height: 0.625rem  ;
-font-weight: 600;
+    font-weight: 600;
 }
-`
-
-
-
-
-export const Button = styled.button`
-    
-
 `
 
 export const Link = styled(ReactLink)`

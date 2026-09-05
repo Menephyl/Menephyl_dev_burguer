@@ -20,7 +20,7 @@ export function Products() {
     useEffect(() => {
         async function loadProducts() {
             const { data } = await api.get('/products')
-            setProducts(data);
+            setProducts(data.products);
         }
         loadProducts()
     }, [])

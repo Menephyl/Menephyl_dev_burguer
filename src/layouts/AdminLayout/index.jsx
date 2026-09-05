@@ -4,7 +4,7 @@ import { Container } from './styles';
 
 export function AdminLayout() {
   const { admin: isAdmin } = JSON.parse(
-    localStorage.getItem('devburger:userData') || '{}'
+    localStorage.getItem('devburguer:userData') || '{}'
   );
 
 

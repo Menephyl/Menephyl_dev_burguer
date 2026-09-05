@@ -44,7 +44,8 @@ height: 100%;
 p{
     color: #fff;
     font-size: 1.125rem;
-    font-family: "Road Rage", sans-serif !important ;
+    font-family: 'Poppins', sans-serif; 
+    font-size: 1.125rem;
     font-weight: 800;
 }
 
@@ -94,11 +95,15 @@ input{
     padding: 0 1rem;
 }
 label{
+     font-family: 'Poppins', sans-serif; 
     font-size: 1.125rem;
+
     font-weight: 600;
-    color: #fff;
+    color: #fff;    
 }
 p{
+     font-family: 'Poppins', sans-serif; 
+    font-size: 1.125rem;
     color:#cf3057;
     font-size: 0.875rem;
     line-height: 80%;

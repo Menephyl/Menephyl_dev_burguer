@@ -1,5 +1,6 @@
 import { Route, Routes } from 'react-router-dom';
-
+import { Elements } from '@stripe/react-stripe-js';
+import stripePromise from '../config/stripeConfig';
 import {
     Cart,
     Checkout,
@@ -26,17 +27,24 @@ export function Router() {
                 <Route path="/cardapio" element={<Menu />}></Route>  {/*ok por que estava  com C maiusculo?*/}
                 <Route path="/carrinho" element={<Cart />}></Route>   {/*ok*/}
                 <Route path="/carrinho/checkout" element={<Checkout />}></Route> {/*ok*/}
-                <Route path="/carrinho/complete" element={<CompletePayment />}></Route> {/*ok*/}
+                <Route path="/carrinho/complete" element={
+                    <Elements stripe={stripePromise}>
+                        <CompletePayment />
+                    </Elements>
+                }>
+                </Route> {/*ok*/}
             </Route>
-
 
             <Route path="/admin" element={<AdminLayout />}>
-                <Route path="/admin/pedidos" element={<Orders />}></Route>
-                <Route path="/admin/editar-produto" element={<EditProduct />}></Route>
-                <Route path="/admin/novo-produto" element={<NewProduct />}></Route>
-                <Route path="/admin/produtos" element={<Products />}></Route>
+                <Route path="pedidos" element={<Orders />}>
+                </Route>
+                <Route path="editar-produto" element={<EditProduct />}>
+                </Route>
+                <Route path="novo-produto" element={<NewProduct />}>
+                </Route>
+                <Route path="produtos" element={<Products />}>
+                </Route>
             </Route>
-
 
             <Route path="/login" element={<Login />} />
             <Route path="/cadastro" element={<Register />} />

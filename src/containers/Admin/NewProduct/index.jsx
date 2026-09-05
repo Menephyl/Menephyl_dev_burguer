@@ -6,7 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import * as yup from 'yup';
 import { api } from '../../../services/api';
-import { Container, ErrorMessage, Form, InputGroup, Label } from './styles.js';
+import { Container, ContainerCheckbox, ErrorMessage, Form, InputGroup, Label, LabelUpload, Select, SubmitButton } from './styles.js';
+
 import Input from '@mui/material/Input';
 
 const schema = yup.object({
@@ -46,7 +47,7 @@ export function NewProduct() {
     useEffect(() => {
         async function loadCategories() {
             const { data } = await api.get('/categories')
-            setCategories(data)
+            setCategories(data.categories)
 
         }
         loadCategories()
